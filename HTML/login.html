@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Review-Login</title>
+    <title>Login</title>
     <link rel="shortcut icon" type="image?x-icon" href="/IMAGES/TitleLogo.svg">
-    <link rel="stylesheet" href="/CSS/ingin.css?ver=1">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/ingin.css">
 </head>
 <body>
     <header id="header">
@@ -23,23 +24,24 @@
                 <div id="login_content">
                     <div class="login_item">
                         <div class="text_box">
-                            <input type="text" placeholder="id">
+                            <input type="text" id="id" placeholder="id">
                         </div>
-                        <div class="error">
+                        <div id="id_error" class="error">
                             Please enter id.
                         </div>
                     </div>
                     
                     <div class="login_item">
                         <div class="text_box">
-                            <input type="password" placeholder="password">
+                            <input type="password" id="pwd" placeholder="password">
                         </div>
-                        <div class="error">
+                        <div id="pwd_error" class="error">
                             Please enter password.
                         </div>
                     </div>
 
                     <div id="submit_box">
+                        <input type="hidden" id="submitflag" name="submit_flag" value="false">
                         <input type="button" id="input_submit" value="Login">
                     </div>
                     
@@ -84,5 +86,6 @@
             </dl>
         </article>
     </footer>
+    <script src="/JS/login.js"></script>
 </body>
 </html>
