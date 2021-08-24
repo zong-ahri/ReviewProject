@@ -10,7 +10,8 @@
     <link rel="shortcut icon" type="image?x-icon" href="/IMAGES/TitleLogo.svg">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="/CSS/index.css?ver=1">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/index.css">
 </head>
 <body>
     <header id="header">
@@ -34,9 +35,8 @@
     <main id="main">
         <div class="box">
             <nav id="menu_icon">
-                <a href="#">
-                    <img src="../IMAGES/MenuIcon.svg" id="contain_icon">
-                </a>
+                <input type="hidden" id="menu_flag" value="false">
+                <img src="../IMAGES/MenuIcon.svg" id="contain_icon">
             </nav>
 
             <div id="all_manus">
@@ -44,110 +44,132 @@
                     <h2>All List</h2>
                     <img src="/IMAGES/Close_x.png" id="close_btn">
                 </hgroup>
-                <!-- width: 1200px -->
-                <div id="section" >
-                    <div>
-                        <!-- width: 200px; margin: 20px -->
+                <div id="section">
+                    <div id="wrapper">
                         <div class="group">
                             <div class="group_title">
-                                <a href="#" class="courselink">Java</a>
+                                <a href="#">Java</a>
                                 <hr>
                             </div>
                             <ul class="sub_nav">
                                 <li>
                                    <div class="label_public">
-                                       <a href="#">test1</a>
+                                       <a href="#">Java1</a>
                                    </div> 
-                                   <div class="sub_nav depth_2">
-                                       <ul class="sub_nav">
-                                            <li>
-                                                <div class="label_public">
-                                                    <a href="#">test1-123456123</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="label_public">
-                                                    <a href="#">test1-24561234</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="label_public">
-                                                    <a href="#">test1-34561234</a>
-                                                </div>
-                                            </li>
-                                       </ul>
-                                   </div>
                                 </li>
                                 <li>
                                     <div class="label_public">
-                                        <a href="#">test2</a>
-                                    </div> 
-                                    <div class="sub_nav depth_2">
-                                        <ul class="sub_nav">
-                                             <li>
-                                                 <div class="label_public">
-                                                     <a href="#">test2-1</a>
-                                                 </div>
-                                             </li>
-                                             <li>
-                                                 <div class="label_public">
-                                                     <a href="#">test2-2</a>
-                                                 </div>
-                                             </li>
-                                        </ul>
+                                        <a href="#">Java2</a>
                                     </div>
                                  </li>
                             </ul>
                         </div>
                         <div class="group">
                             <div class="group_title">
-                                <a href="#" class="courselink">CSS</a>
+                                <a href="#">CSS</a>
+                                <hr>
+                            </div>
+                            <ul class="sub_nav">
+                                <li>
+                                   <div class="label_public">
+                                       <a href="#">CSS1</a>
+                                   </div>
+                                </li>
+                                <li>
+                                    <div class="label_public">
+                                        <a href="#">CSS2</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="group">
+                            <div class="group_title">
+                                <a href="#">Java</a>
                                 <hr>
                             </div>
                             <ul class="sub_nav">
                                 <li>
                                    <div class="label_public">
                                        <a href="#">test1</a>
-                                   </div> 
-                                   <div class="sub_nav depth_2">
-                                       <ul class="sub_nav">
-                                            <li>
-                                                <div class="label_public">
-                                                    <a href="#">test1-1</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="label_public">
-                                                    <a href="#">test1-2</a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                   </div>
                                 </li>
                                 <li>
                                     <div class="label_public">
                                         <a href="#">test2</a>
-                                    </div> 
-                                    <div class="sub_nav depth_2">
-                                        <ul class="sub_nav">
-                                            <li>
-                                                <div class="label_public">
-                                                    <a href="#">test2-1</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="label_public">
-                                                    <a href="#">test2-2</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="label_public">
-                                                    <a href="#">test2-3</a>
-                                                </div>
-                                            </li>
-                                        </ul>
+                                    </div>
+                                 </li>
+                            </ul>
+                        </div>
+                        <div class="group">
+                            <div class="group_title">
+                                <a href="#">Java</a>
+                                <hr>
+                            </div>
+                            <ul class="sub_nav">
+                                <li>
+                                   <div class="label_public">
+                                       <a href="#">test1</a>
+                                   </div>
+                                </li>
+                                <li>
+                                    <div class="label_public">
+                                        <a href="#">test2</a>
+                                    </div>
+                                 </li>
+                            </ul>
+                        </div>
+                        <div class="group">
+                            <div class="group_title">
+                                <a href="#">Java</a>
+                                <hr>
+                            </div>
+                            <ul class="sub_nav">
+                                <li>
+                                   <div class="label_public">
+                                       <a href="#">test1</a>
+                                   </div>
+                                </li>
+                                <li>
+                                    <div class="label_public">
+                                        <a href="#">test2</a>
+                                    </div>
+                                 </li>
+                            </ul>
+                        </div>
+                        <div class="group">
+                            <div class="group_title">
+                                <a href="#">CSS</a>
+                                <hr>
+                            </div>
+                            <ul class="sub_nav">
+                                <li>
+                                   <div class="label_public">
+                                       <a href="#">test1</a>
+                                   </div>
+                                </li>
+                                <li>
+                                    <div class="label_public">
+                                        <a href="#">test2</a>
                                     </div>
                                 </li>
+                            </ul>
+                        </div>
+                        <div class="group">
+                            <div class="group_title">
+                                <a href="#">Java</a>
+                                <hr>
+                            </div>
+                            <ul class="sub_nav">
+                                <li>
+                                   <div class="label_public">
+                                       <a href="#">test1</a>
+                                   </div>
+                                </li>
+                                <li>
+                                    <div class="label_public">
+                                        <a href="#">test2</a>
+                                    </div>
+                                 </li>
                             </ul>
                         </div>
                     </div>
@@ -155,7 +177,7 @@
             </div>
             
             
-            <!--             
+                        
             <div id="swiper-container__id" class="swiper-container">
                 <article id="main_art" class="swiper-wrapper">
                     <nav class="swiper-slide">
@@ -179,7 +201,7 @@
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
-             -->
+            
         </div>
     </main>
     <footer id="footer">
@@ -209,5 +231,6 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="../JS/pageSwiper.js"></script>
+    <script src="/JS/index.js"></script>
 </body>
 </html>

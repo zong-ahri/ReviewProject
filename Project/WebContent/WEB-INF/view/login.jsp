@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Review-Login</title>
     <link rel="shortcut icon" type="image?x-icon" href="/IMAGES/TitleLogo.svg">
-    <link rel="stylesheet" href="/CSS/ingin.css?ver=1">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/ingin.css">
 </head>
 <body>
     <header id="header">
@@ -25,16 +26,16 @@
                 <div id="login_content">
                     <div class="login_item">
                         <div class="text_box">
-                            <input type="text" id = "loginflag" placeholder="id" name="loginflag" value="<%=request.getAttribute("user_id") %>">
+                            <input type="text" id="id" placeholder="id" name="loginflag" value="<%=request.getAttribute("user_id") %>">
                         </div>
-                        <div class="error">
+                        <div id="id_error" class="error">
                             Please enter id.
                         </div>
                     </div>
                     
                     <div class="login_item">
                         <div class="text_box">
-                           <input type="password" id="pwd" class="input_text" placeholder="password" name="user_pwd">
+                           <input type="password" id="pwd" placeholder="password" name="user_pwd">
                         </div>
                         <div id="pwd_error" class="error">
                             Please enter password.
@@ -80,10 +81,10 @@
                     BackEnd Information
                 </dt>
                 <dd><span>name: </span>Kwon Hyuk In</dd>
-                <dd><span>birthday: </span>test</dd>
+                <dd><span>birthday: </span>1997.10.24</dd>
                 <dd><span>gender: </span>male</dd>
-                <dd><span>email: </span>test</dd>
-                <dd><span>phone: </span>test</dd>
+                <dd><span>email: </span>khin3910@hanmail.net</dd>
+                <dd><span>phone: </span>010-3910-9860</dd>
             </dl>
         </article>
     </footer>

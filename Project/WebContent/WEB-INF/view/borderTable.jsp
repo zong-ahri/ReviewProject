@@ -1,13 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Border</title>
+    <title>Border-Table</title>
     <link rel="shortcut icon" type="image?x-icon" href="/IMAGES/TitleLogo.svg">
     <link rel="stylesheet" href="/CSS/style.css">
-    <link rel="stylesheet" href="/CSS/border.css">
+    <link rel="stylesheet" href="/CSS/border_table.css">
 </head>
 <body>
     <header id="header">
@@ -41,60 +43,93 @@
                             <div class="label_public">
                                 <a href="#">Java1</a>
                             </div> 
-                        </li>
-                        <li>
+                         </li>
+                         <li>
                              <div class="label_public">
                                  <a href="#">Javva2</a>
                              </div> 
-                        </li>
-                        <li>
+                          </li>
+                          <li>
                              <div class="label_public">
                                  <a href="#">Ja3</a>
                              </div> 
-                        </li>
-                        <li>
+                          </li>
+                          <li>
                              <div class="label_public">
                                  <a href="#">Java4Jaava4Java4</a>
                              </div> 
-                        </li>
-                        <li>
+                          </li>
+                          <li>
                             <div class="label_public">
                                 <a href="#">Java1</a>
                             </div> 
-                        </li>
-                        <li>
+                         </li>
+                         <li>
                              <div class="label_public">
                                  <a href="#">Javva2</a>
                              </div> 
-                        </li>
-                        <li>
+                          </li>
+                          <li>
                              <div class="label_public">
                                  <a href="#">Ja3</a>
                              </div> 
-                        </li>
-                        <li>
+                          </li>
+                          <li>
                              <div class="label_public">
-                                 <a href="#">Java5555555555</a>
+                                 <a href="#">Java4Jaava4Java4</a>
                              </div> 
-                        </li>
-                        <li>
-                            <div class="label_public">
-                                <a href="#">Java666666666666ava4</a>
-                            </div> 
-                       </li>
-                       <li>
-                        <div class="label_public">
-                            <a href="#">Java47777777777777a4Java4</a>
-                        </div> 
-                   </li>
+                          </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <!-- 소스트리 컨테이너 커밋테스트 -->
-        <div id="container" class="containertext">
-            <h1>Java의 설치</h1>
-            
+        <div id="container">
+            <div class="group_title">
+                <a href="#">Java</a>
+                <hr>
+            </div>
+            <ul class="sub_nav">
+                <li>
+                   <div class="label_public">
+                       <a href="#">Java1</a>
+                   </div> 
+                </li>
+                <li>
+                    <div class="label_public">
+                        <a href="#">Javva2</a>
+                    </div> 
+                 </li>
+                 <li>
+                    <div class="label_public">
+                        <a href="#">Ja3</a>
+                    </div> 
+                 </li>
+                 <li>
+                    <div class="label_public">
+                        <a href="#">Java4Jaava4Java4</a>
+                    </div> 
+                 </li>
+                 <li>
+                    <div class="label_public">
+                        <a href="#">Java1</a>
+                    </div> 
+                 </li>
+                 <li>
+                     <div class="label_public">
+                         <a href="#">Javva2</a>
+                     </div> 
+                  </li>
+                  <li>
+                     <div class="label_public">
+                         <a href="#">Ja3</a>
+                     </div> 
+                  </li>
+                  <li>
+                     <div class="label_public">
+                         <a href="#">Java4Jaava4Java4</a>
+                     </div> 
+                  </li>
+            </ul>
         </div>
     </main>
     <footer id="footer">
@@ -114,10 +149,10 @@
                     BackEnd Information
                 </dt>
                 <dd><span>name: </span>Kwon Hyuk In</dd>
-                <dd><span>birthday: </span>1997.10.24</dd>
+                <dd><span>birthday: </span>test</dd>
                 <dd><span>gender: </span>male</dd>
-                <dd><span>email: </span>khin3910@hanmail.net</dd>
-                <dd><span>phone: </span>010-3910-9860</dd>
+                <dd><span>email: </span>test</dd>
+                <dd><span>phone: </span>test</dd>
             </dl>
         </article>
     </footer>
