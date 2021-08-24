@@ -21,7 +21,7 @@
             </div>
             <div id="right_nav">
                 <li>
-                    <a href="#">Login</a>
+                    <a href="/login">Login</a>
                 </li>
                 <li>
                     <a href="#">Join</a>

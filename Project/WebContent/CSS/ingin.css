@@ -1,34 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap');
-
-* {
-    box-sizing: border-box;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-p {
-    margin: 0px;
-}
-
-li {
-    list-style-type: none;
-    text-align: center;
-} 
-
-body {
-    margin: 0;
-    font-family: 'Yomogi';
-    box-sizing: border-box;
-}
-
-.box {
-    border: 3px solid rgb(185, 185, 185);
-}
-
-
 /* header css */
 
 #header {
@@ -51,32 +20,6 @@ body {
 #header #header_title #title_logo {
     width: 50px;
 }
-
-
-
-/* footer css */
-
-#footer #information {
-    display: flex;
-    justify-content: space-around;
-    text-align: start;
-}
-
-#footer #information dt, #footer #information span {
-    font-size: 20px;
-    font-weight: 700;
-}
-
-#footer #information dl {
-    margin: 5px 0px;
-}
-
-#footer #information dd {
-    margin: 0px;
-    font-weight: 500;
-    line-height: 1.2em;
-}
-
 
 /* main css */
 
@@ -119,9 +62,11 @@ body {
     border: none;
     font-size: 20px;
     cursor: pointer;
+    outline: none;
 }
 
 #main #container #login_form #login_content .login_item .error {
+    display: none;
     margin-left: 20px;
     color: red;
     font-weight: 600;

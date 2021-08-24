@@ -22,11 +22,12 @@
     </header>
     <main id="main">
         <div id="container">
-            <form id="login_form">
+            <form id="login_form" method = "post" action="login">
+            <input type="hidden" id="loginflag" name="loginflag" value="<%=request.getAttribute("loginflag") %>">
                 <div id="login_content">
                     <div class="login_item">
                         <div class="text_box">
-                            <input type="text" id="id" placeholder="id" name="loginflag" value="<%=request.getAttribute("user_id") %>">
+                            <input type="text" id="id" placeholder="id" name="user_id" value="<%=request.getAttribute("user_id") %>">
                         </div>
                         <div id="id_error" class="error">
                             Please enter id.

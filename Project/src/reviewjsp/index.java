@@ -27,12 +27,10 @@ public class index extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 		UserBean sessionBean = (UserBean)session.getAttribute("userBean");
-		if(sessionBean == null) {
-			request.getRequestDispatcher("header_login.jsp").include(request, response);
-		}else {
-			request.setAttribute("name", sessionBean.getUser_name());
-	
-		}
+		
+		
+		
+		request.getRequestDispatcher("/WEB-INF/view/index.jsp").forward(request, response);
     /* 디스패처의 역활은 서블릿과 jsp한테 리케스트 리스폰스를 받을수있게 값을 넘겨준다 */
 	
 	}

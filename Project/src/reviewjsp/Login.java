@@ -21,19 +21,23 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		
 		HttpSession session = request.getSession();
 		
 		String user_id = request.getParameter("user_id");
 		String user_pwd = request.getParameter("user_pwd");
 		String submitflag = request.getParameter("submitflag");
+		System.out.println(user_id);
 		if(user_id == null) {
 			user_id = "";
 		}
 		if(submitflag == null) {
-			if(session.getAttribute("userBean") != null) {
-				response.sendRedirect("index");  /* 왜 index로 보내지? */
+			if(session.getAttribute("userBean") != null) {   /*로그인 첫페이지를 띄운 상태에서  userBean이 있다는것은 로그인이 성공했다는 뜻이므로,
+																로그인이 되지 않은상태이기 때문에 index로 보내줌*/
+				response.sendRedirect("index");
 				return;
 			}
 			
@@ -45,7 +49,7 @@ request.setCharacterEncoding("UTF-8");
 			int flag = loginMgrPool.loginIdCheck(user_id, user_pwd);
 			if(flag == 1) {
 				session.setAttribute("userBean", loginMgrPool.getUserBean(user_id));
-				request.getRequestDispatcher("index").forward(request, response);
+				response.sendRedirect("index");
 				return;
 			}
 			
