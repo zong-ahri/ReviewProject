@@ -26,6 +26,14 @@
   </build>
   
   <dependencies>
+  	<!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jsp-api -->
+	<dependency>
+	    <groupId>org.apache.tomcat</groupId>
+	    <artifactId>tomcat-jsp-api</artifactId>
+	    <version>8.5.70</version>
+	</dependency>
+
+  	
   	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 	<dependency>
 	    <groupId>mysql</groupId>
