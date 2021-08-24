@@ -26,6 +26,12 @@
                 <li>
                     <a href="#">Join</a>
                 </li>
+                <li>    
+                    <a href="#">username</a>
+                </li>
+                <li>
+                    <a href="#">logout</a>
+                </li>
                 <li>
                     <span id="help">Help</span>
                 </li>

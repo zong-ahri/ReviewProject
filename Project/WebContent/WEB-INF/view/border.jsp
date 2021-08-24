@@ -24,6 +24,12 @@
                 <li>
                     <a href="#">Join</a>
                 </li>
+                <li>    
+                    <a href="#">username</a>
+                </li>
+                <li>
+                    <a href="#">logout</a>
+                </li>
                 <li>
                     <span id="help">Help</span>
                 </li>
@@ -94,8 +100,38 @@
             </div>
         </div>
         <div id="container">
-            <h1>Java의 설치</h1>
-            
+            <div>
+                <h1>Java의 설치</h1>
+                <div id="border_contain">
+                    <div id="page_info">
+                        <div class="box">
+                            총 <span>?</span>건 | 현재 페이지 <span>?</span>/<span>?</span>
+                        </div>
+                        <form>
+                            <select class="filter">
+                                <option value="filter">필터</option>
+                                <option value="number">number</option>
+                                <option value="update">update</option>
+                                <option value="like">like</option>
+                                <option value="count">count</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div>
+                        <form>
+                            <select class="filter">
+                                <option value="all">전체</option>
+                                <option value="writer">name</option>
+                                <option value="update">update</option>
+                            </select>
+                            <div class="box">
+                                <input type="search">
+                                <button type="submit">search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <footer id="footer">

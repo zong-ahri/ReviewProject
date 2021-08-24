@@ -35,8 +35,8 @@ public class Login extends HttpServlet {
 			user_id = "";
 		}
 		if(submitflag == null) {
-			if(session.getAttribute("userBean") != null) {   /*ë¡œê·¸ì¸ ì²«í˜ì´ì§€ë¥¼ ë„ìš´ ìƒíƒœì—ì„œ  userBeanì´ ìˆë‹¤ëŠ”ê²ƒì€ ë¡œê·¸ì¸ì´ ì„±ê³µí–ˆë‹¤ëŠ” ëœ»ì´ë¯€ë¡œ,
-																ë¡œê·¸ì¸ì´ ë˜ì§€ ì•Šì€ìƒíƒœì´ê¸° ë•Œë¬¸ì— indexë¡œ ë³´ë‚´ì¤Œ*/
+			if(session.getAttribute("userBean") != null) {   /*·Î±×ÀÎ Ã¹ÆäÀÌÁö¸¦ ¶ç¿î »óÅÂ¿¡¼­  userBeanÀÌ ÀÖ´Ù´Â°ÍÀº ·Î±×ÀÎÀÌ ¼º°øÇß´Ù´Â ¶æÀÌ¹Ç·Î,
+																·Î±×ÀÎÀÌ µÇÁö ¾ÊÀº»óÅÂÀÌ±â ¶§¹®¿¡ index·Î º¸³»ÁÜ*/
 				response.sendRedirect("index");
 				return;
 			}
@@ -53,7 +53,7 @@ public class Login extends HttpServlet {
 				return;
 			}
 			
-			request.setAttribute("loginflag", flag);   /* flagê°’ ? */
+			request.setAttribute("loginflag", flag); 
 			request.setAttribute("user_id", user_id); 
 		}
 		
