@@ -32,18 +32,18 @@
                         <span class="error" id="id_error">Please enter id.</span>
                     </div>
                     <div class="box">
-                        <label class="join_font">Password</label>
-                        <input class="text_pro" id="pwd" type="password">
+                        <label class="join_font" for="pwd">Password</label>
+                        <input type="password" class="text_pro" id="pwd">
                         <span class="error" id="pwd_error">Please enter password.</span>
                     </div>
                     <div class="box">
-                        <label class="join_font">Reconfirm Password</label>
-                        <input class="text_pro" id="repwd" type="password">
+                        <label class="join_font" for="repwd">Reconfirm Password</label>
+                        <input type="password" class="text_pro" id="repwd">
                         <span class="error" id="repwd_error">Passwords do not match.</span>
                     </div>
                     <div class="box">
-                        <label class="join_font">Name</label>
-                        <input class="text_pro" id="name" type="text">
+                        <label class="join_font" for="name">Name</label>
+                        <input type="text" class="text_pro" id="name">
                         <span class="error" id="name_error">Please enter name.</span>
                     </div>
                     <div class="box">
@@ -54,12 +54,12 @@
                             </div>
                             <div class="birth_box">
                                 <select class="text_pro" id="month">
-                                    <option value="0">월</option>
-                                    <option value="1">2</option>
-                                    <option value="2">3</option>
-                                    <option value="3">4</option>
-                                    <option value="4">5</option>
-                                    <option value="5">1</option>
+                                    <option value selected>월</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
                                     <option value="6">6</option>
                                     <option value="7">7</option>
                                     <option value="8">8</option>
@@ -70,7 +70,7 @@
                                 </select>
                             </div>
                             <div class="birth_box">
-                                <input class="text_pro" id="day" type="text" placeholder="DAY"  maxlength="2">
+                                <input type="text" class="text_pro" id="day" placeholder="DAY"  maxlength="2">
                             </div>
                         </div>
                         <span class="error" id="year_error">Please enter the exact four digits of your birth year.</span>
@@ -78,39 +78,42 @@
                         <span class="error" id="day_error">Please enter the exact 2 digits of the date of birth.</span>
                     </div>
                     <div class="box">
-                        <label class="join_font">Gender</label>
+                        <label class="join_font" for="gender_pro">Gender</label>
                         <div class="box" id="Gender_box">
-                            <select id="Gender_pro">
-                                <option>성별</option>
-                                <option>남자</option>
-                                <option>여자</option>
-                                <option>선택 안함</option>
+                            <select id="gender_pro">
+                                <option value selected>성별</option>
+                                <option value="M">남자</option>
+                                <option value="F">여자</option>
+                                <option value="U">선택 안함</option>
                             </select>
                         </div>
-                        <span class="error">Please enter gender.</span>
+                        <span class="error" id="gender_error">Please enter gender.</span>
                     </div>
                     <div class="box">
-                        <label class="join_font">Email (Choice)</label>
-                        <input class="text_pro" type="text">
+                        <label class="join_font" for="email">Email</label>
+                        <input class="text_pro" id="email" type="email">
+                        <span class="error" id="email_error">Please enter email.</span>
                     </div>
                     <div class="box">
-                        <label class="join_font">Phone Number</label>
+                        <label class="join_font" for="first_phone">Phone Number (Choice)</label>
                         <div>
                             <div class="phone_box">
-                                <select class="text_pro">
-                                    <option>010</option>
-                                    <option>011</option>
-                                    <option>016</option>
-                                    <option>017</option>
-                                    <option>018</option>
-                                    <option>019</option>
+                                <select class="text_pro" id="first_phone">
+                                    <option value="010" selected>010</option>
+                                    <option value="011">011</option>
+                                    <option value="016">016</option>
+                                    <option value="017">017</option>
+                                    <option value="018">018</option>
+                                    <option value="019">019</option>
                                 </select>
                             </div>
+                            -
                             <div class="birth_box">
-                                <input class="text_pro" type="text">
+                                <input type="text" class="text_pro" id="middle_phone" maxlength="4">
                             </div>
+                            -
                             <div class="birth_box">
-                                <input class="text_pro" type="text">
+                                <input type="text" class="text_pro" id="last_phone" maxlength="4">
                             </div>
                         </div>
                         <span class="error" id="first_error">Please enter first phone number.</span>
@@ -118,9 +121,11 @@
                         <span class="error" id="last_error">Please enter last phone number.</span>
                     </div>
                     <div class="box">
-                        <button type="button" id="but_box"><span>Join</span></button>
+                        <input type="hidden" id="submitflag">
+                        <button type="button" id="but_box">
+                            <span>Join</span>
+                        </button>
                     </div>
-
                 </div>
             </form>
         </div>
