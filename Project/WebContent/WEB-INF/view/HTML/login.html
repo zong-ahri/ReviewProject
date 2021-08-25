@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="shortcut icon" type="image?x-icon" href="/IMAGES/TitleLogo.png">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/login.css">
+</head>
+<body>
+    <header id="header">
+        <div id="header_title">
+            <a href="#">
+                <img src="/IMAGES/TitleLogo.png" id="title_logo">
+                " Let's review it well."
+            </a>
+        </div>
+    </header>
+    <main id="main">
+        <div id="container">
+            <form id="login_form">
+                <div id="login_content">
+                    <div class="login_item">
+                        <div class="text_box">
+                            <input type="text" id="id" placeholder="id">
+                        </div>
+                        <div id="id_error" class="error">
+                            Please enter id.
+                        </div>
+                    </div>
+                    
+                    <div class="login_item">
+                        <div class="text_box">
+                            <input type="password" id="pwd" placeholder="password">
+                        </div>
+                        <div id="pwd_error" class="error">
+                            Please enter password.
+                        </div>
+                    </div>
+
+                    <div id="submit_box">
+                        <input type="hidden" id="submitflag" name="submit_flag" value="false">
+                        <input type="button" id="input_submit" value="Login">
+                    </div>
+                    
+                    <div>
+                        <hr>
+                        <div id="login_chk_box">
+                            <input type="checkbox" id="login_chk" value="on">
+                            <label for="login_chk" id="login_labal"></label>
+                            <label for="login_chk" id="chk_label">login keep check</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div id="login_join">
+                <hr>    
+                <a href="#">Join</a>
+                <hr>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <article class="box" id="information">
+            <table id="front">
+                <caption>
+                    FrontEnd Information
+                </caption>
+                <tr>
+                    <td class="info_emp">name</td>
+                    <td>Choi Jong Won</td>
+                </tr>
+                <tr>
+                    <td class="info_emp">birthday</td>
+                    <td>1998.01.18</td>
+                </tr>
+                <tr>
+                    <td class="info_emp">gender</td>
+                    <td>male</td>
+                </tr>
+                <tr>
+                    <td class="info_emp">email</td>
+                    <td>choijoy10@naver.com</td>
+                </tr>
+                <tr>
+                    <td class="info_emp">phone</td>
+                    <td>010-3003-7022</td>
+                </tr>
+            </table>
+            <table id="back">
+                <caption>
+                    BackEnd Information
+                </caption>
+                <tr>
+                    <td class="info_emp">name</td>
+                    <td>Kwon Hyuk In</td>
+                </tr>
+                <tr>
+                    <td class="info_emp">birthday</td>
+                    <td>1997.10.24</td>
+                </tr>
+                <tr>
+                    <td class="info_emp">gender</td>
+                    <td>male</td>
+                </tr>
+                <tr>
+                    <td class="info_emp">email</td>
+                    <td>khin3910@hanmail.net</td>
+                </tr>
+                <tr>
+                    <td class="info_emp">phone</td>
+                    <td>010-3910-9860</td>
+                </tr>
+            </table>
+        </article>
+    </footer>
+    <script src="/JS/login.js"></script>
+</body>
+</html>

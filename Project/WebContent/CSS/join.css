@@ -1,0 +1,113 @@
+/* header css */
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+#header #header_title {
+    width: 800px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#header #header_title #title_logo {
+    width: 50px;
+}
+
+/* main css */
+
+#main {
+    display: flex;
+    justify-content: center;
+}
+
+#main #container {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0px;
+}
+
+#main #container #join_form #join_content {
+    width: 500px;
+}
+
+#main #container #join_form #join_content .box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border: none;
+}
+
+#main #container #join_form #join_content .box .error {
+    display: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: red;
+}
+
+#main #container #join_form #join_content .box .join_font {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(185, 185, 185);
+}
+
+#main #container #join_form #join_content .box div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#main #container #join_form #join_content .box .text_pro {
+    height: 50px;
+    border: 2px solid rgb(185, 185, 185);
+    padding-left: 10px;
+    font-size: 20px;
+    outline: none;
+}
+#main #container #join_form #join_content .box select {
+    width: 150px;
+    height: 50px;
+    border: 2px solid rgb(185, 185, 185);
+    padding-left: 10px;
+    font-size: 20px;
+    outline: none;
+}
+
+#main #container #join_form #join_content .box .birth_box{
+    width: 150px;
+    height: 50px;
+}
+
+#main #container #join_form #join_content .box .birth_box .text_pro{
+    width: 150px;
+    height: 50px;
+}
+
+#main #container #join_form #join_content .box #Gender_box {
+    margin: 0px;
+}
+
+#main #container #join_form #join_content .box #Gender_pro {
+    width: auto;
+}
+
+#main #container #join_form #join_content .box #but_box {
+    background-color: rgb(185, 185, 185);
+    height: 50px;
+}
+
+#main #container #join_form #join_content .box #but_box span {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
