@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -25,7 +27,7 @@
                     <div class="box">
                         <label class="join_font">Id</label>
                         <input type="hidden" id="id_status">
-                        <input class="text_pro" id="id" type="text">
+                        <input type="text" class="text_pro" id="id" name="join_id">
                         <span class="error" id="id_duplicate_error">Duplicate ID.</span>
                         <span class="error" id="id_error">Please enter id.</span>
                     </div>
@@ -79,9 +81,9 @@
                         <label class="join_font">Gender</label>
                         <div class="box" id="Gender_box">
                             <select id="Gender_pro">
-                                <option>성별</option>
-                                <option>남자</option>
-                                <option>여자</option>
+                                <option>성별</option>
+                                <option>남자</option>
+                                <option>여자</option>
                                 <option>선택 안함</option>
                             </select>
                         </div>
