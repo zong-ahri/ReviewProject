@@ -25,6 +25,9 @@ public class JoinIdCheck extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");		
 		joinMgrPool joinMgr = new joinMgrPool();
 		request.setAttribute("idstatus", joinMgr.idCheck(join_id));
+		
+		
+		
 	}
 }
 	
