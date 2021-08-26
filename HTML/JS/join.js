@@ -25,7 +25,7 @@ const submit_flag = document.querySelector('#submitflag')
 const submit_button = document.querySelector('#but_box')
 
 
-//아이디중폭확인
+//아이디중복확인
 if(id_status.value == "true") {
 	id_duplicate_error.style.display = "block";
 }else {

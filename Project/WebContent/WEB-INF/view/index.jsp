@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Review</title>
-    <link rel="shortcut icon" type="image?x-icon" href="/IMAGES/TitleLogo.svg">
+    <link rel="shortcut icon" type="image?x-icon" href="/IMAGES/TitleLogo.png">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/CSS/style.css">
@@ -17,7 +17,7 @@
     <header id="header">
         <nav class="box">
             <div id="left_nav">
-                <a href="#"><img src="/IMAGES/TitleLogo.svg" id="logo"> Let's review it well.</a>
+                <a href="/index"><img src="/IMAGES/TitleLogo.png" id="logo"> Let's review it well.</a>
             </div>
             <div id="right_nav">
                 <li>
@@ -30,7 +30,7 @@
                     <a><%=request.getAttribute("name") %></a>
                 </li>
                 <li>
-                    <a href="logout">logout</a>
+                    <a href="/logout">logout</a>
                 </li>
                 <li>
                     <span id="help">Help</span>
@@ -42,7 +42,7 @@
         <div class="box">
             <nav id="menu_icon">
                 <input type="hidden" id="menu_flag" value="false">
-                <img src="../IMAGES/MenuIcon.svg" id="contain_icon">
+                <img src="/IMAGES/MenuIcon.png" id="contain_icon">
             </nav>
 
             <div id="all_manus">

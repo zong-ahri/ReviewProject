@@ -25,7 +25,7 @@
             <form id="join_form" action="joininsert">
                 <div id="join_content">
                     <div class="box">
-                        <label class="join_font">Id</label>
+                        <label class="join_font" for="id">Id</label>
                         <input type="hidden" id="id_status" value="${empty idstatus ? false : idstatus}">
                         <input type="text" class="text_pro" id="id" name="user_id" value="${join_id }">
                         <span class="error" id="id_duplicate_error">Duplicate ID.</span>
@@ -47,7 +47,7 @@
                         <span class="error" id="name_error">Please enter name.</span>
                     </div>
                     <div class="box">
-                        <label class="join_font">birthday</label>
+                        <label class="join_font" for="year">birthday</label>
                         <div>
                             <div class="birth_box">
                                 <input class="text_pro" id="year" type="text" placeholder="YEAR" maxlength="4">

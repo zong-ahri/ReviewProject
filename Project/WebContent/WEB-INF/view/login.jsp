@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Review-Login</title>
-    <link rel="shortcut icon" type="image?x-icon" href="/IMAGES/TitleLogo.svg">
+    <title>Login</title>
+    <link rel="shortcut icon" type="image?x-icon" href="/IMAGES/TitleLogo.png">
     <link rel="stylesheet" href="/CSS/style.css">
     <link rel="stylesheet" href="/CSS/ingin.css">
 </head>
@@ -15,7 +15,7 @@
     <header id="header">
         <div id="header_title">
             <a href="/index">
-                <img src="/IMAGES/TitleLogo.svg" id="title_logo">
+                <img src="/IMAGES/TitleLogo.png" id="title_logo">
                 " Let's review it well."
             </a>
         </div>
@@ -60,7 +60,7 @@
             </form>
             <div id="login_join">
                 <hr>    
-                <a href="#">Join</a>
+                <a href="/join">Join</a>
                 <hr>
             </div>
         </div>

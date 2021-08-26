@@ -198,26 +198,56 @@
     </main>
     <footer id="footer">
         <article class="box" id="information">
-            <dl>
-                <dt>
+            <table id="front">
+                <caption>
                     FrontEnd Information
-                </dt>
-                <dd><span>name: </span>Choi Jong Won</dd>
-                <dd><span>birthday: </span>1998.01.18</dd>
-                <dd><span>gender: </span>male</dd>
-                <dd><span>email: </span>choijoy10@naver.com</dd>
-                <dd><span>phone: </span>010-3003-7022</dd>
-            </dl>
-            <dl>
-                <dt>
+                </caption>
+                <tr>
+                    <td class="info_emp">name</td>
+                    <td>Choi Jong Won</td>
+                </tr>
+                <tr>
+                    <td class="info_emp">birthday</td>
+                    <td>1998.01.18</td>
+                </tr>
+                <tr>
+                    <td class="info_emp">gender</td>
+                    <td>male</td>
+                </tr>
+                <tr>
+                    <td class="info_emp">email</td>
+                    <td>choijoy10@naver.com</td>
+                </tr>
+                <tr>
+                    <td class="info_emp">phone</td>
+                    <td>010-3003-7022</td>
+                </tr>
+            </table>
+            <table id="back">
+                <caption>
                     BackEnd Information
-                </dt>
-                <dd><span>name: </span>Kwon Hyuk In</dd>
-                <dd><span>birthday: </span>test</dd>
-                <dd><span>gender: </span>male</dd>
-                <dd><span>email: </span>test</dd>
-                <dd><span>phone: </span>test</dd>
-            </dl>
+                </caption>
+                <tr>
+                    <td class="info_emp">name</td>
+                    <td>Kwon Hyuk In</td>
+                </tr>
+                <tr>
+                    <td class="info_emp">birthday</td>
+                    <td>1997.10.24</td>
+                </tr>
+                <tr>
+                    <td class="info_emp">gender</td>
+                    <td>male</td>
+                </tr>
+                <tr>
+                    <td class="info_emp">email</td>
+                    <td>khin3910@hanmail.net</td>
+                </tr>
+                <tr>
+                    <td class="info_emp">phone</td>
+                    <td>010-3910-9860</td>
+                </tr>
+            </table>
         </article>
     </footer>
 </body>
