@@ -14,7 +14,7 @@
 <body>
     <header id="header">
         <div id="header_title">
-            <a href="#">
+            <a href="/index">
                 <img src="/IMAGES/TitleLogo.svg" id="title_logo">
                 " Let's review it well."
             </a>

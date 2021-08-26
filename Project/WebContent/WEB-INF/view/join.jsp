@@ -14,7 +14,7 @@
 <body>
     <header id="header">
         <div id="header_title">
-            <a href="#">
+            <a href="/index">
                 <img src="/IMAGES/TitleLogo.png" id="title_logo">
                 " Let's review it well."
             </a>
@@ -22,12 +22,12 @@
     </header>
     <main id="main">
         <div id="container">
-            <form id="join_form">
+            <form id="join_form" action="join">
                 <div id="join_content">
                     <div class="box">
                         <label class="join_font">Id</label>
-                        <input type="hidden" id="id_status">
-                        <input type="text" class="text_pro" id="id" name="join_id">
+                        <input type="hidden" id="id_status" value="${empty idstatus ? false : idstatus}">
+                        <input type="text" class="text_pro" id="id" name="join_id" value="${join_id }">
                         <span class="error" id="id_duplicate_error">Duplicate ID.</span>
                         <span class="error" id="id_error">Please enter id.</span>
                     </div>
@@ -121,7 +121,7 @@
                         <span class="error" id="last_error">Please enter last phone number.</span>
                     </div>
                     <div class="box">
-                        <input type="hidden" id="submitflag">
+                        <input type="hidden" id="submitflag" name="submitflag">
                         <button type="button" id="but_box">
                             <span>Join</span>
                         </button>

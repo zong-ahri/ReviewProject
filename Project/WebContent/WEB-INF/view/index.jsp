@@ -24,10 +24,10 @@
                     <a href="/login">Login</a>
                 </li>
                 <li>
-                    <a href="/joinProc">Join</a>
+                    <a href="/join">Join</a>
                 </li>
                 <li>    
-                    <a href="#">username</a>
+                    <a><%=request.getAttribute("name") %></a>
                 </li>
                 <li>
                     <a href="logout">logout</a>

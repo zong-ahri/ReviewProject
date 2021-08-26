@@ -46,10 +46,10 @@ public class joinMgrPool {
 			pool.freeConnection(con, pstmt, rs);
 		}
 		
-		if(id != null) {
+		if(id != null) {       /*이미 존재하는 아이디 */
 			return true;
 		}else {
-			return false;
+			return false;     /*존재하는 아이디가 아님 중복 x*/
 		}
 		
 	}

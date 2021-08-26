@@ -30,13 +30,13 @@ public class Login extends HttpServlet {
 		String user_id = request.getParameter("user_id");
 		String user_pwd = request.getParameter("user_pwd");
 		String submitflag = request.getParameter("submitflag");
-		System.out.println(user_id);
+		
 		if(user_id == null) {
 			user_id = "";
 		}
 		if(submitflag == null) {
-			if(session.getAttribute("userBean") != null) {   /*·Î±×ÀÎ Ã¹ÆäÀÌÁö¸¦ ¶ç¿î »óÅÂ¿¡¼­  userBeanÀÌ ÀÖ´Ù´Â°ÍÀº ·Î±×ÀÎÀÌ ¼º°øÇß´Ù´Â ¶æÀÌ¹Ç·Î,
-																·Î±×ÀÎÀÌ µÇÁö ¾ÊÀº»óÅÂÀÌ±â ¶§¹®¿¡ index·Î º¸³»ÁÜ*/
+			if(session.getAttribute("userBean") != null) {   /*ï¿½Î±ï¿½ï¿½ï¿½ Ã¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½  userBeanï¿½ï¿½ ï¿½Ö´Ù´Â°ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß´Ù´ï¿½ ï¿½ï¿½ï¿½Ì¹Ç·ï¿½,
+																ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ indexï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 				response.sendRedirect("index");
 				return;
 			}

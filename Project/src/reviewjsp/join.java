@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class joinProc
  */
-@WebServlet("/joinProc")
-public class joinProc extends HttpServlet {
+@WebServlet("/join")
+public class join extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -57,7 +57,7 @@ public class joinProc extends HttpServlet {
 		if(request.getParameter("idstatus") != null){
 			idstatus = request.getParameter("idstatus");
 		}
-		if(request.getParameter("submitflag") != null && request.getParameter("submitflag").equals("true")){
+		if(request.getParameter("submitflag") != null){
 			submitflag = request.getParameter("submitflag");
 			
 			userBean.setUser_id(user_id);
@@ -79,6 +79,7 @@ public class joinProc extends HttpServlet {
 		request.setAttribute("user_year", user_year);
 		request.setAttribute("user_month", user_month);
 		request.setAttribute("user_day", user_day);
+		
 		request.getRequestDispatcher("/WEB-INF/view/join.jsp").forward(request, response);
 	}
 
