@@ -57,20 +57,19 @@ public class join extends HttpServlet {
 		if(request.getParameter("idstatus") != null){
 			idstatus = request.getParameter("idstatus");
 		}
-		if(request.getParameter("submitflag") != null){
-			submitflag = request.getParameter("submitflag");
-			
-			userBean.setUser_id(user_id);
-			userBean.setUser_pwd(user_pwd);
-			userBean.setUser_name(user_name);
-			userBean.setUser_birthday(user_year + "-" + user_month + "-" + user_day);
-			
-			boolean insertStatus = joinMgr.joinInsert(userBean);
-			if(insertStatus == true){
-				response.sendRedirect("login");
-				return;
-			}
+		
+		userBean.setUser_id(user_id);
+		userBean.setUser_pwd(user_pwd);
+		userBean.setUser_name(user_name);
+		userBean.setUser_birthday(user_year + "-" + user_month + "-" + user_day);
+		
+		boolean insertStatus = joinMgr.joinInsert(userBean);
+		if(insertStatus == true){
+			response.sendRedirect("login");
+			return;
 		}
+		
+		
 		
 		request.setAttribute("user_id", user_id);
 		request.setAttribute("user_pwd", user_pwd);

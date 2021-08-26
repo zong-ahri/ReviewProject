@@ -22,18 +22,18 @@
     </header>
     <main id="main">
         <div id="container">
-            <form id="join_form" action="join">
+            <form id="join_form" action="joininsert">
                 <div id="join_content">
                     <div class="box">
                         <label class="join_font">Id</label>
                         <input type="hidden" id="id_status" value="${empty idstatus ? false : idstatus}">
-                        <input type="text" class="text_pro" id="id" name="join_id" value="${join_id }">
+                        <input type="text" class="text_pro" id="id" name="user_id" value="${join_id }">
                         <span class="error" id="id_duplicate_error">Duplicate ID.</span>
                         <span class="error" id="id_error">Please enter id.</span>
                     </div>
                     <div class="box">
                         <label class="join_font" for="pwd">Password</label>
-                        <input type="password" class="text_pro" id="pwd">
+                        <input type="password" class="text_pro" id="pwd" name="user_pwd">
                         <span class="error" id="pwd_error">Please enter password.</span>
                     </div>
                     <div class="box">
@@ -121,7 +121,6 @@
                         <span class="error" id="last_error">Please enter last phone number.</span>
                     </div>
                     <div class="box">
-                        <input type="hidden" id="submitflag" name="submitflag">
                         <button type="button" id="but_box">
                             <span>Join</span>
                         </button>

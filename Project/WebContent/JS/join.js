@@ -25,31 +25,19 @@ const submit_flag = document.querySelector('#submitflag')
 const submit_button = document.querySelector('#but_box')
 
 
+//아이디중폭확인
 if(id_status.value == "true") {
 	id_duplicate_error.style.display = "block";
 }else {
 	id_duplicate_error.style.display = "none";
 }	
-
-//로그인오류
+//아이디오류
 input_id.onblur = () => {
     if(input_id.value.length == 0) {
         id_error.style.display = "block";
     }else {
-        id_error.style.display = "none";
 		location.replace("/joinIdCheck?join_id="+input_id.value);
-	  }
 	}
-
-
-/*
-// 로그인확인
-if(id_status == "true") {
-    id_duplicate_error.style.display = "block";
-}else {
-    id_duplicate_error.style.display = "none";
-    //join_form.submit();
-   // location.replace("JoinIdCheck?user_id+"+input_id.value);
 }
 //비밀번호오류
 input_pwd.onblur = () => {
@@ -59,8 +47,6 @@ input_pwd.onblur = () => {
         pwd_error.style.display = "none";
     }
 }
-
-*/
 //비밀번호확인오류
 input_repwd.onblur = () => {
     if(input_repwd.value != input_pwd.value || input_repwd.value.length == 0) {
@@ -176,6 +162,5 @@ submit_button.onclick = () => {
         return;
     }
 
-    submit_flag = "true";
     join_form.submit();
 }
