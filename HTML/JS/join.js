@@ -25,22 +25,23 @@ const submit_flag = document.querySelector('#submitflag')
 const submit_button = document.querySelector('#but_box')
 
 
+// 로그인확인
+if(id_status == "true") {
+    id_duplicate_error.style.display = "block";
+}else {
+    id_duplicate_error.style.display = "none";
+    location.repl
+    ace("JoinIdCheck?user_id+"+input_id.value);
+}
 //로그인오류
 input_id.onblur = () => {
     if(input_id.value.length == 0) {
         id_error.style.display = "block";
     }else {
         id_error.style.display = "none";
-        // join_form.submit();
+        location.href="JoinIdCheck?user_id="+input_id.value;
+        
     }
-}
-// 로그인확인
-if(id_status == "true") {
-    id_duplicate_error.style.display = "block";
-}else {
-    id_duplicate_error.style.display = "none";
-    // location.href="JoinIdCheck?user_id="+input_id.value;
-    // location.replace("JoinIdCheck?user_id+"+input_id.value);
 }
 //비밀번호오류
 input_pwd.onblur = () => {
@@ -143,16 +144,28 @@ input_email.onblur = () => {
     }
 }
 
+//회원가입버튼
+submit_button.onclick = () => {
+    if(id_status == "true") {
+        return;
+    }else if(input_id.value.length == 0) {
+        return;
+    }else if(input_repwd.value != input_pwd.value || input_repwd.value.length == 0) {
+        return;
+    }else if(input_name.value.length == 0) {
+        return;
+    }else if(input_year.value.length == 0 || isNaN(inputYear)) {
+        return;
+    }else if(input_month.value == "") {
+        return;
+    }else if(input_day.value.length == 0 || isNaN(inputDay)) {
+        return;
+    }else if(input_gender.value == "") {
+        return;
+    }else if(input_email.value.length == 0) {
+        return;
+    }
 
-
-
-
-
-
-
-
-// submit_button.onclick = () => {
-
-//     submit_flag.value = "true";
-//     join_form.submit();
-// }
+    submit_flag = "true";
+    join_form.submit();
+}

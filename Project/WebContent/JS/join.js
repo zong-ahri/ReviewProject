@@ -37,7 +37,6 @@ input_id.onblur = () => {
         id_error.style.display = "block";
     }else {
         id_error.style.display = "none";
-	    //location.href="/joinIdCheck?join_id="+input_id.value;
 		location.replace("/joinIdCheck?join_id="+input_id.value);
 	  }
 	}
@@ -155,16 +154,28 @@ input_email.onblur = () => {
     }
 }
 
+//회원가입버튼
+submit_button.onclick = () => {
+    if(id_status == "true") {
+        return;
+    }else if(input_id.value.length == 0) {
+        return;
+    }else if(input_repwd.value != input_pwd.value || input_repwd.value.length == 0) {
+        return;
+    }else if(input_name.value.length == 0) {
+        return;
+    }else if(input_year.value.length == 0 || isNaN(inputYear)) {
+        return;
+    }else if(input_month.value == "") {
+        return;
+    }else if(input_day.value.length == 0 || isNaN(inputDay)) {
+        return;
+    }else if(input_gender.value == "") {
+        return;
+    }else if(input_email.value.length == 0) {
+        return;
+    }
 
-
-
-
-
-
-
-
-// submit_button.onclick = () => {
-
-//     submit_flag.value = "true";
-//     join_form.submit();
-// }
+    submit_flag = "true";
+    join_form.submit();
+}
