@@ -1,0 +1,119 @@
+#main {
+    display: flex;
+}
+
+/* border side_bar */
+
+#main #side_bar {
+    width: 20%;
+    margin: 3px;
+    border: 3px solid rgb(185, 185, 185);
+}
+
+#main #side_bar #categories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main #side_bar #categories #title_btn {
+    width: 229px;
+    margin: 3px;
+    border: 3px solid rgb(185, 185, 185);
+    background-color: white;
+}
+
+#main #side_bar #categories .add_from {
+    display: flex;
+    justify-content: center;
+}
+
+#main #side_bar #categories #title_text {
+    width: 100%;
+    border: 3px solid rgb(185, 185, 185);
+    outline: none;
+}
+
+#main #side_bar #categories #title_add {
+    width: 25px;
+    height: 25px;
+    border: 3px solid rgb(185, 185, 185);
+    background-color: white;
+}
+
+#main #side_bar #categories #title_close {
+    width: 25px;
+    height: 25px;
+    border: 3px solid rgb(185, 185, 185);
+    background-color: white;
+}
+
+#main #side_bar .group {
+    width: 200px;
+    margin: 20px;
+}
+
+#main #side_bar .group .group_title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#main #side_bar #categories .group .group_title .title_delete {
+    width: 25px;
+    height: 25px;
+    border: 3px solid rgb(185, 185, 185);
+    background-color: white;
+}
+
+#main #side_bar .group .sub_nav {
+    margin-top: 0px;
+    padding-left: 20px;
+    line-height: 1.5;
+}
+
+#main #side_bar .group .sub_nav li {
+    text-align: left;
+}
+
+#main #side_bar .group .sub_nav li .label_public {
+    font-size: 15px;
+}
+
+#main #side_bar #categories .group .sub_nav li .label_public .content_delete {
+    width: 21px;
+    height: 21px;
+    border: 3px solid rgb(185, 185, 185);
+    background-color: white;
+}
+
+#main #side_bar #categories .group .sub_nav .content_btn {
+    width: 180px;
+    margin: 3px 0px;
+    border: 3px solid rgb(185, 185, 185);
+    background-color: white;
+}
+
+#main #side_bar #categories .add_from {
+    display: flex;
+    justify-content: start;
+}
+
+#main #side_bar #categories .group .sub_nav .add_from .content_text {
+    width: 100%;
+    border: 3px solid rgb(185, 185, 185);
+    outline: none;
+}
+
+#main #side_bar #categories .group .sub_nav .add_from .content_add {
+    width: 25px;
+    height: 25px;
+    border: 3px solid rgb(185, 185, 185);
+    background-color: white;
+}
+
+#main #side_bar #categories .group .sub_nav .add_from .content_close {
+    width: 25px;
+    height: 25px;
+    border: 3px solid rgb(185, 185, 185);
+    background-color: white;
+}

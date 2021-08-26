@@ -1,43 +1,7 @@
-#main {
-    display: flex;
-}
-
-/* border side_bar */
-
-#main #side_bar {
-    width: 250px;
-    margin: 3px;
-    border: 3px solid rgb(185, 185, 185);
-}
-
-#main #side_bar .group {
-    width: 200px;
-    margin: 20px;
-}
-
-#main #side_bar .group .group_title {
-    font-size: 16px;
-    font-weight: 600;
-}
-
-#main #side_bar .group .sub_nav {
-    margin-top: 0px;
-    padding-left: 20px;
-    line-height: 1.5;
-}
-
-#main #side_bar .group .sub_nav li {
-    text-align: left;
-}
-
-#main #side_bar .group .sub_nav li .label_public {
-    font-size: 15px;
-}
-
-/* border container */
+/* border_table_container */
 
 #main #container {
-    width: 100%;
+    width: 80%;
     margin: 3px;
     padding: 30px;
     border: 3px solid rgb(185, 185, 185);

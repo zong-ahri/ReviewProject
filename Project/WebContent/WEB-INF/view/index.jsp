@@ -187,19 +187,19 @@
             <div id="swiper-container__id" class="swiper-container">
                 <article id="main_art" class="swiper-wrapper">
                     <nav class="swiper-slide">
-                        <div class="box"><span>Java</span></div>
+                        <div class="box"><a href="#">Java</a></div>
                     </nav>
                     <nav class="swiper-slide">
-                        <div class="box"><span>Script</span></div>
+                        <div class="box"><a href="#">Script</a></div>
                     </nav>
                     <nav class="swiper-slide">
-                        <div class="box"><span>HTML</span></div>
+                        <div class="box"><a href="#">HTML</a></div>
                     </nav>
                     <nav class="swiper-slide">
-                        <div class="box"><span>CSS</span></div>
+                        <div class="box"><a href="#">CSS</a></div>
                     </nav>
                     <nav class="swiper-slide">
-                        <div class="box"><span>Js</span></div>
+                        <div class="box"><a href="#">Js</a></div>
                     </nav>
                 </article>
                 
