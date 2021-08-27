@@ -23,9 +23,10 @@
     background-color: white;
 }
 
-#main #side_bar #categories .add_from {
+#main #side_bar #categories #title_add_from {
     display: flex;
     justify-content: center;
+    width: 229px;
 }
 
 #main #side_bar #categories #title_text {
