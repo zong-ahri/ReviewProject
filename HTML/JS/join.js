@@ -36,7 +36,7 @@ input_id.onblur = () => {
     if(input_id.value.length == 0) {
         id_error.style.display = "block";
     }else {
-		location.replace("/joinIdCheck?join_id="+input_id.value);
+		location.replace("/joinidcheck?join_id="+input_id.value);
 	}
 }
 //비밀번호오류

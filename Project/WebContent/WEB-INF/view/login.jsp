@@ -23,7 +23,7 @@
     <main id="main">
         <div id="container">
             <form id="login_form" method = "post" action="login">
-            <input type="hidden" id="loginflag" name="loginflag" value="<%=request.getAttribute("loginflag") %>">
+                <input type="hidden" id="loginflag" name="loginflag" value="<%=request.getAttribute("loginflag") %>">
                 <div id="login_content">
                     <div class="login_item">
                         <div class="text_box">
@@ -65,60 +65,9 @@
             </div>
         </div>
     </main>
-    <footer id="footer">
-        <article class="box" id="information">
-            <table id="front">
-                <caption>
-                    FrontEnd Information
-                </caption>
-                <tr>
-                    <td class="info_emp">name</td>
-                    <td>Choi Jong Won</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">birthday</td>
-                    <td>1998.01.18</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">gender</td>
-                    <td>male</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">email</td>
-                    <td>choijoy10@naver.com</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">phone</td>
-                    <td>010-3003-7022</td>
-                </tr>
-            </table>
-            <table id="back">
-                <caption>
-                    BackEnd Information
-                </caption>
-                <tr>
-                    <td class="info_emp">name</td>
-                    <td>Kwon Hyuk In</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">birthday</td>
-                    <td>1997.10.24</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">gender</td>
-                    <td>male</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">email</td>
-                    <td>khin3910@hanmail.net</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">phone</td>
-                    <td>010-3910-9860</td>
-                </tr>
-            </table>
-        </article>
-    </footer>
+    
+    <jsp:include page="/WEB-INF/view/footer.jsp"></jsp:include>
+
     <script src="/JS/login.js"></script>
 </body>
 </html>

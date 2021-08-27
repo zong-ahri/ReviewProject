@@ -8,7 +8,7 @@
                 <a href="/index"><img src="/IMAGES/TitleLogo.png" id="logo"> Let's review it well.</a>
             </div>
             <div id="right_nav">
-            
+                
             <c:choose>
             	<c:when test="${empty userBean }">
                 <li>

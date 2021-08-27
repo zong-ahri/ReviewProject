@@ -22,7 +22,7 @@
     </header>
     <main id="main">
         <div id="container">
-            <form id="join_form" action="/joininsert" method = "post">
+            <form id="join_form" action="/joininsert" method="post">
                 <div id="join_content">
                     <div class="box">
                         <label class="join_font" for="id">Id</label>
@@ -42,15 +42,15 @@
                         <span class="error" id="repwd_error">Passwords do not match.</span>
                     </div>
                     <div class="box">
-                        <label class="join_font" for="name" name="name">Name</label>
-                        <input type="text" class="text_pro" id="name" name = "user_name">
+                        <label class="join_font" for="name">Name</label>
+                        <input type="text" class="text_pro" id="name" name="user_name">
                         <span class="error" id="name_error">Please enter name.</span>
                     </div>
                     <div class="box">
                         <label class="join_font" for="year">birthday</label>
                         <div>
                             <div class="birth_box">
-                                <input type="text" class="text_pro" id="year"  name="user_year" placeholder="YEAR" maxlength="4">
+                                <input type="text" class="text_pro" id="year" name="user_year" placeholder="YEAR" maxlength="4">
                             </div>
                             <div class="birth_box">
                                 <select class="text_pro" id="month" name="user_month">
@@ -80,7 +80,7 @@
                     <div class="box">
                         <label class="join_font" for="gender_pro">Gender</label>
                         <div class="box" id="Gender_box">
-                            <select id="gender_pro" name= "user_gender">
+                            <select id="gender_pro" name="user_gender">
                                 <option value selected>성별</option>
                                 <option value="M">남자</option>
                                 <option value="F">여자</option>
@@ -91,7 +91,7 @@
                     </div>
                     <div class="box">
                         <label class="join_font" for="email">Email</label>
-                        <input class="text_pro" id="email" name = "user_email" type="email">
+                        <input type="email" class="text_pro" id="email" name="user_email">
                         <span class="error" id="email_error">Please enter email.</span>
                     </div>
                     <div class="box">
@@ -113,7 +113,7 @@
                             </div>
                             -
                             <div class="birth_box">
-                                <input type="text" class="text_pro" id="last_phone" name = "user_last_phone" maxlength="4">
+                                <input type="text" class="text_pro" id="last_phone" name="user_last_phone" maxlength="4">
                             </div>
                         </div>
                         <span class="error" id="first_error">Please enter first phone number.</span>
@@ -129,60 +129,9 @@
             </form>
         </div>
     </main>
-    <footer id="footer">
-        <article class="box" id="information">
-            <table id="front">
-                <caption>
-                    FrontEnd Information
-                </caption>
-                <tr>
-                    <td class="info_emp">name</td>
-                    <td>Choi Jong Won</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">birthday</td>
-                    <td>1998.01.18</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">gender</td>
-                    <td>male</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">email</td>
-                    <td>choijoy10@naver.com</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">phone</td>
-                    <td>010-3003-7022</td>
-                </tr>
-            </table>
-            <table id="back">
-                <caption>
-                    BackEnd Information
-                </caption>
-                <tr>
-                    <td class="info_emp">name</td>
-                    <td>Kwon Hyuk In</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">birthday</td>
-                    <td>1997.10.24</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">gender</td>
-                    <td>male</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">email</td>
-                    <td>khin3910@hanmail.net</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">phone</td>
-                    <td>010-3910-9860</td>
-                </tr>
-            </table>
-        </article>
-    </footer>
+
+    <jsp:include page="/WEB-INF/view/footer.jsp"></jsp:include>
+
     <script src="/JS/join.js"></script>
 </body>
 </html>

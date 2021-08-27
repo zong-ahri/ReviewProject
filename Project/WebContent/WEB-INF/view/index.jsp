@@ -16,7 +16,7 @@
 <body>
 
 	<jsp:include page="/WEB-INF/view/header.jsp"></jsp:include>
-
+    
     <main id="main">
         <div class="box">
             <nav id="menu_icon">
