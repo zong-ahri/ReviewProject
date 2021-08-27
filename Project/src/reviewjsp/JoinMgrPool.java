@@ -8,14 +8,14 @@ import java.util.Date;
 
 import db.DBConnectionMgr;
 
-public class joinMgrPool {
+public class JoinMgrPool {
 	private DBConnectionMgr pool = null;
 	
 	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	Date now = new Date();
 	String nowDate = dateFormat.format(now);
 	
-	public joinMgrPool() {
+	public JoinMgrPool() {
 		try {
 			pool = DBConnectionMgr.getInstance();
 		}catch(Exception e) {
@@ -61,15 +61,18 @@ public class joinMgrPool {
 		
 		try {
 			con = pool.getConnection();
-			sql = "insert into user_mst(user_id, user_pwd, user_name, user_birthday, createdate, updatedate)"
-					+ "values(?, ?, ?, ?, ?, ?)";
+			sql = "insert into user_mst(user_id, user_pwd, user_name, user_birthday, user_gender, user_phone, user_email, createdate, updatedate)"
+					+ "values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, userBean.getUser_id());
 			pstmt.setString(2, userBean.getUser_pwd());
 			pstmt.setString(3, userBean.getUser_name());
 			pstmt.setString(4, userBean.getUser_birthday());
-			pstmt.setString(5, nowDate);
-			pstmt.setString(6, nowDate);
+			pstmt.setString(5, userBean.getUser_gender());
+			pstmt.setString(6, userBean.getUser_phone());
+			pstmt.setString(7, userBean.getUser_email());
+			pstmt.setString(8, nowDate);
+			pstmt.setString(9, nowDate);
 			pstmt.executeUpdate();
 		}catch (Exception e) {
 			e.printStackTrace();

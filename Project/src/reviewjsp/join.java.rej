@@ -1,0 +1,10 @@
+diff a/Project/src/reviewjsp/join.java b/Project/src/reviewjsp/join.java	(rejected hunks)
+@@ -57,7 +57,7 @@
+ 		if(request.getParameter("idstatus") != null){
+ 			idstatus = request.getParameter("idstatus");
+ 		}
+-		if(request.getParameter("submitflag") != null && request.getParameter("submitflag").equals("true")){
++		if(request.getParameter("submitflag") != null){
+ 			submitflag = request.getParameter("submitflag");
+ 			
+ 			userBean.setUser_id(user_id);

@@ -1,29 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Review</title>
-    <link rel="shortcut icon" type="image?x-icon" href="/IMAGES/TitleLogo.png">
-    <link rel="stylesheet" href="/CSS/style.css">
-    <link rel="stylesheet" href="/CSS/index.css">
-</head>
-<body>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
     <header id="header">
         <nav class="box">
             <div id="left_nav">
                 <a href="/index"><img src="/IMAGES/TitleLogo.png" id="logo"> Let's review it well.</a>
             </div>
             <div id="right_nav">
-                <li>    
+            
+            <c:choose>
+            	<c:when test="${empty userBean }">
+                <li>
                     <a href="/login">Login</a>
                 </li>
                 <li>
                     <a href="/join">Join</a>
                 </li>
+            	</c:when>
+            	<c:otherwise>
+                <li>    
+                    <span>${userBean.user_name }</span>
+                </li>
+                <li>
+                    <a href="/logout">logout</a>
+                </li>
+            	</c:otherwise>
+            </c:choose>
                 <li>
                     <span id="help">Help</span>
                 </li>

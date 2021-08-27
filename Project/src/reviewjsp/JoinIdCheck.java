@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class JoinIdCheck
  */
-@WebServlet("/joinIdCheck")
+@WebServlet("/joinidcheck")
 public class JoinIdCheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -23,7 +23,7 @@ public class JoinIdCheck extends HttpServlet {
 		String join_id = request.getParameter("join_id");
 		
 		request.setCharacterEncoding("UTF-8");		
-		joinMgrPool joinMgr = new joinMgrPool();
+		JoinMgrPool joinMgr = new JoinMgrPool();
 		
 		request.setAttribute("idstatus", joinMgr.idCheck(join_id));
 		request.setAttribute("join_id", join_id);

@@ -14,30 +14,9 @@
     <link rel="stylesheet" href="/CSS/index.css">
 </head>
 <body>
-    <header id="header">
-        <nav class="box">
-            <div id="left_nav">
-                <a href="/index"><img src="/IMAGES/TitleLogo.png" id="logo"> Let's review it well.</a>
-            </div>
-            <div id="right_nav">
-                <li>
-                    <a href="/login">Login</a>
-                </li>
-                <li>
-                    <a href="/join">Join</a>
-                </li>
-                <li>    
-                    <a><%=request.getAttribute("name") %></a>
-                </li>
-                <li>
-                    <a href="/logout">logout</a>
-                </li>
-                <li>
-                    <span id="help">Help</span>
-                </li>
-            </div>
-        </nav>
-    </header>
+
+	<jsp:include page="/WEB-INF/view/header.jsp"></jsp:include>
+
     <main id="main">
         <div class="box">
             <nav id="menu_icon">
@@ -182,8 +161,6 @@
                 </div>
             </div>
             
-            
-                        
             <div id="swiper-container__id" class="swiper-container">
                 <article id="main_art" class="swiper-wrapper">
                     <nav class="swiper-slide">
@@ -210,63 +187,13 @@
             
         </div>
     </main>
-  	<footer id="footer">
-        <article class="box" id="information">
-            <table id="front">
-                <caption>
-                    FrontEnd Information
-                </caption>
-                <tr>
-                    <td class="info_emp">name</td>
-                    <td>Choi Jong Won</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">birthday</td>
-                    <td>1998.01.18</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">gender</td>
-                    <td>male</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">email</td>
-                    <td>choijoy10@naver.com</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">phone</td>
-                    <td>010-3003-7022</td>
-                </tr>
-            </table>
-            <table id="back">
-                <caption>
-                    BackEnd Information
-                </caption>
-                <tr>
-                    <td class="info_emp">name</td>
-                    <td>Kwon Hyuk In</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">birthday</td>
-                    <td>1997.10.24</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">gender</td>
-                    <td>male</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">email</td>
-                    <td>khin3910@hanmail.net</td>
-                </tr>
-                <tr>
-                    <td class="info_emp">phone</td>
-                    <td>010-3910-9860</td>
-                </tr>
-            </table>
-        </article>
-    </footer>
+    
+    <jsp:include page="/WEB-INF/view/footer.jsp"></jsp:include>
+
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="../JS/pageSwiper.js"></script>
     <script src="/JS/index.js"></script>
 </body>
 </html>
+  	

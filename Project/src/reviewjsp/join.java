@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class joinProc
@@ -20,8 +21,9 @@ public class join extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("UTF-8");
-		joinMgrPool joinMgr = new joinMgrPool();
-		UserBean userBean = new UserBean();
+		HttpSession session = request.getSession();
+		UserBean sessionBean = (UserBean)session.getAttribute("userBean");
+		
 		
 		String	user_id = "",
 				user_pwd = "",
@@ -30,8 +32,11 @@ public class join extends HttpServlet {
 				user_year = "",
 				user_month = "",
 				user_day = "",
-				idstatus = "",
-				submitflag = "";
+				user_gender = "",
+				user_first_phone = "",
+				user_middle_phone = "",
+				user_last_phone = "",
+				user_email = "";
 		
 		if(request.getParameter("user_id") != null){
 			user_id = request.getParameter("user_id");
@@ -51,35 +56,49 @@ public class join extends HttpServlet {
 		if(request.getParameter("user_month") != null){
 			user_month = request.getParameter("user_month");
 		}
-		if(request.getParameter("user_day") != null){
-			user_day = request.getParameter("user_day");
+		if(request.getParameter("user_gender") != null){
+			user_day = request.getParameter("user_gender");
 		}
-		if(request.getParameter("idstatus") != null){
-			idstatus = request.getParameter("idstatus");
+		if(request.getParameter("user_first_phone") != null){
+			user_day = request.getParameter("user_first_phone");
 		}
-		
-		userBean.setUser_id(user_id);
-		userBean.setUser_pwd(user_pwd);
-		userBean.setUser_name(user_name);
-		userBean.setUser_birthday(user_year + "-" + user_month + "-" + user_day);
-		
-		boolean insertStatus = joinMgr.joinInsert(userBean);
-		if(insertStatus == true){
-			response.sendRedirect("login");
-			return;
+		if(request.getParameter("user_middle_phone") != null){
+			user_day = request.getParameter("user_middle_phone");
+		}
+		if(request.getParameter("user_last_phone") != null){
+			user_day = request.getParameter("user_last_phone");
+		}
+		if(request.getParameter("user_email") != null){
+			user_day = request.getParameter("user_email");
 		}
 		
+		
+
 		
 		
 		request.setAttribute("user_id", user_id);
-		request.setAttribute("user_pwd", user_pwd);
-		request.setAttribute("user_repwd", user_repwd);
+		request.setAttribute("user_pwd", user_repwd);
 		request.setAttribute("user_name", user_name);
 		request.setAttribute("user_year", user_year);
 		request.setAttribute("user_month", user_month);
 		request.setAttribute("user_day", user_day);
+		request.setAttribute("user_gender", user_gender);
+		request.setAttribute("user_email", user_email);
+		request.setAttribute("user_first_phone", user_first_phone);
+		request.setAttribute("user_middel_phone", user_middle_phone);
+		request.setAttribute("user_last_phone", user_last_phone);
+		request.setAttribute("user_day", user_day);
+		request.setAttribute("user_day", user_day);
 		
-		request.getRequestDispatcher("/WEB-INF/view/join.jsp").forward(request, response);
+
+		if(sessionBean == null) {
+			request.getRequestDispatcher("/WEB-INF/view/join.jsp").forward(request, response);			
+		}else {
+			request.setAttribute("name", sessionBean.getUser_name());
+			request.getRequestDispatcher("/WEB-INF/view/index.jsp").forward(request, response);
+			
+		}
+
 	}
 
 }

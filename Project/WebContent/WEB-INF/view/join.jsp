@@ -22,7 +22,7 @@
     </header>
     <main id="main">
         <div id="container">
-            <form id="join_form" action="joininsert">
+            <form id="join_form" action="/joininsert" method = "post">
                 <div id="join_content">
                     <div class="box">
                         <label class="join_font" for="id">Id</label>
@@ -33,27 +33,27 @@
                     </div>
                     <div class="box">
                         <label class="join_font" for="pwd">Password</label>
-                        <input type="password" class="text_pro" id="pwd" name="user_pwd">
+                        <input type="password" class="text_pro" id="pwd">
                         <span class="error" id="pwd_error">Please enter password.</span>
                     </div>
                     <div class="box">
                         <label class="join_font" for="repwd">Reconfirm Password</label>
-                        <input type="password" class="text_pro" id="repwd">
+                        <input type="password" class="text_pro" id="repwd" name="user_repwd">
                         <span class="error" id="repwd_error">Passwords do not match.</span>
                     </div>
                     <div class="box">
-                        <label class="join_font" for="name">Name</label>
-                        <input type="text" class="text_pro" id="name">
+                        <label class="join_font" for="name" name="name">Name</label>
+                        <input type="text" class="text_pro" id="name" name = "user_name">
                         <span class="error" id="name_error">Please enter name.</span>
                     </div>
                     <div class="box">
                         <label class="join_font" for="year">birthday</label>
                         <div>
                             <div class="birth_box">
-                                <input class="text_pro" id="year" type="text" placeholder="YEAR" maxlength="4">
+                                <input type="text" class="text_pro" id="year"  name="user_year" placeholder="YEAR" maxlength="4">
                             </div>
                             <div class="birth_box">
-                                <select class="text_pro" id="month">
+                                <select class="text_pro" id="month" name="user_month">
                                     <option value selected>월</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -70,7 +70,7 @@
                                 </select>
                             </div>
                             <div class="birth_box">
-                                <input type="text" class="text_pro" id="day" placeholder="DAY"  maxlength="2">
+                                <input type="text" class="text_pro" id="day" name="user_day" placeholder="DAY"  maxlength="2">
                             </div>
                         </div>
                         <span class="error" id="year_error">Please enter the exact four digits of your birth year.</span>
@@ -80,7 +80,7 @@
                     <div class="box">
                         <label class="join_font" for="gender_pro">Gender</label>
                         <div class="box" id="Gender_box">
-                            <select id="gender_pro">
+                            <select id="gender_pro" name= "user_gender">
                                 <option value selected>성별</option>
                                 <option value="M">남자</option>
                                 <option value="F">여자</option>
@@ -91,14 +91,14 @@
                     </div>
                     <div class="box">
                         <label class="join_font" for="email">Email</label>
-                        <input class="text_pro" id="email" type="email">
+                        <input class="text_pro" id="email" name = "user_email" type="email">
                         <span class="error" id="email_error">Please enter email.</span>
                     </div>
                     <div class="box">
                         <label class="join_font" for="first_phone">Phone Number (Choice)</label>
                         <div>
                             <div class="phone_box">
-                                <select class="text_pro" id="first_phone">
+                                <select class="text_pro" id="first_phone" name="user_first_phone">
                                     <option value="010" selected>010</option>
                                     <option value="011">011</option>
                                     <option value="016">016</option>
@@ -109,11 +109,11 @@
                             </div>
                             -
                             <div class="birth_box">
-                                <input type="text" class="text_pro" id="middle_phone" maxlength="4">
+                                <input type="text" class="text_pro" id="middle_phone" name="user_middle_phone" maxlength="4">
                             </div>
                             -
                             <div class="birth_box">
-                                <input type="text" class="text_pro" id="last_phone" maxlength="4">
+                                <input type="text" class="text_pro" id="last_phone" name = "user_last_phone" maxlength="4">
                             </div>
                         </div>
                         <span class="error" id="first_error">Please enter first phone number.</span>

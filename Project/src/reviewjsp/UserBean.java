@@ -5,7 +5,9 @@ public class UserBean {
 	private String user_pwd;
 	private String user_name;
 	private String user_birthday;
-	
+	private String user_gender;
+	private String user_email;
+	private String user_phone;
 	public String getUser_id() {
 		return user_id;
 	}
@@ -30,8 +32,23 @@ public class UserBean {
 	public void setUser_birthday(String user_birthday) {
 		this.user_birthday = user_birthday;
 	}
-	
-	
-	
+	public String getUser_gender() {
+		return user_gender;
+	}
+	public void setUser_gender(String user_gender) {
+		this.user_gender = user_gender;
+	}
+	public String getUser_email() {
+		return user_email;
+	}
+	public void setUser_email(String user_email) {
+		this.user_email = user_email;
+	}
+	public String getUser_phone() {
+		return user_phone;
+	}
+	public void setUser_phone(String user_phone) {
+		this.user_phone = user_phone;
+	}
 	
 }
