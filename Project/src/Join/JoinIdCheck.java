@@ -28,7 +28,7 @@ public class JoinIdCheck extends HttpServlet {
 		request.setAttribute("idstatus", joinMgr.idCheck(join_id));
 		request.setAttribute("join_id", join_id);
 		
-		request.getRequestDispatcher("/WEB-INF/view/join.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/view/join/join.jsp").forward(request, response);
 		
 	}
 }

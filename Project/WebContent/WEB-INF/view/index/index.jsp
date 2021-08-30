@@ -33,7 +33,7 @@
                     <div id="wrapper">
                         <div class="group">
                             <div class="group_title">
-                                <a href="#">Java</a>
+                                <a href="/border">Java</a>
                                 <hr>
                             </div>
                             <ul class="sub_nav">

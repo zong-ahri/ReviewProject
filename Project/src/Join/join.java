@@ -94,10 +94,10 @@ public class join extends HttpServlet {
 		
 
 		if(sessionBean == null) {
-			request.getRequestDispatcher("/WEB-INF/view/join.jsp").forward(request, response);			
+			request.getRequestDispatcher("/WEB-INF/view/join/join.jsp").forward(request, response);			
 		}else {
 			request.setAttribute("name", sessionBean.getUser_name());
-			request.getRequestDispatcher("/WEB-INF/view/index.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/view/index/index.jsp").forward(request, response);
 			
 		}
 

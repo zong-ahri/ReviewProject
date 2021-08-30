@@ -54,7 +54,7 @@ public class JoinInsert extends HttpServlet {
 		
 		joinMgr.joinInsert(userBean);
 		
-		request.getRequestDispatcher("/WEB-INF/view/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/view/index/index.jsp").forward(request, response);
 		
 	}
 
