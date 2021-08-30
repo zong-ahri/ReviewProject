@@ -66,7 +66,7 @@
         </div>
     </main>
     
-    <jsp:include page="/WEB-INF/view/footer.jsp"></jsp:include>
+    <jsp:include page="/WEB-INF/view/footer/footer.jsp"></jsp:include>
 
     <script src="/JS/login.js"></script>
 </body>

@@ -14,7 +14,7 @@
 </head>
 <body>
     
-    <jsp:include page="/WEB-INF/view/header.jsp"></jsp:include>
+    <jsp:include page="/WEB-INF/view/header/header.jsp"></jsp:include>
 
     <main id="main">
         <div id="side_bar">
@@ -203,7 +203,7 @@
         </div>
     </main>
     
-    <jsp:include page="/WEB-INF/view/footer.jsp"></jsp:include>
+    <jsp:include page="/WEB-INF/view/footer/footer.jsp"></jsp:include>
 
 </body>
 </html>

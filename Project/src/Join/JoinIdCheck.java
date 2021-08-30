@@ -1,4 +1,4 @@
-package reviewjsp;
+package Join;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

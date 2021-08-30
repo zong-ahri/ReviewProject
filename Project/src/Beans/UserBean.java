@@ -1,4 +1,4 @@
-package reviewjsp;
+package Beans;
 
 public class UserBean {
 	private String user_id;

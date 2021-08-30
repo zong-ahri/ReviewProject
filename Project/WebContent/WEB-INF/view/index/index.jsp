@@ -15,7 +15,7 @@
 </head>
 <body>
 
-	<jsp:include page="/WEB-INF/view/header.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/view/header/header.jsp"></jsp:include>
     
     <main id="main">
         <div class="box">
@@ -188,7 +188,7 @@
         </div>
     </main>
     
-    <jsp:include page="/WEB-INF/view/footer.jsp"></jsp:include>
+    <jsp:include page="/WEB-INF/view/footer/footer.jsp"></jsp:include>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
