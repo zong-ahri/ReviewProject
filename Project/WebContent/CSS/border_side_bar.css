@@ -21,12 +21,14 @@
     margin: 3px;
     border: 3px solid rgb(185, 185, 185);
     background-color: white;
+    cursor: pointer;
 }
 
-#main #side_bar #categories #title_add_from {
-    display: flex;
+#main #side_bar #categories #title_add_form {
+    display: none;
     justify-content: center;
     width: 229px;
+    margin: 3px;
 }
 
 #main #side_bar #categories #title_text {
@@ -92,27 +94,29 @@
     margin: 3px 0px;
     border: 3px solid rgb(185, 185, 185);
     background-color: white;
+    cursor: pointer;
 }
 
-#main #side_bar #categories .add_from {
-    display: flex;
+#main #side_bar #categories .add_form {
+    display: none;
     justify-content: start;
+    margin: 3px 0px;
 }
 
-#main #side_bar #categories .group .sub_nav .add_from .content_text {
+#main #side_bar #categories .group .sub_nav .add_form .content_text {
     width: 100%;
     border: 3px solid rgb(185, 185, 185);
     outline: none;
 }
 
-#main #side_bar #categories .group .sub_nav .add_from .content_add {
+#main #side_bar #categories .group .sub_nav .add_form .content_add {
     width: 25px;
     height: 25px;
     border: 3px solid rgb(185, 185, 185);
     background-color: white;
 }
 
-#main #side_bar #categories .group .sub_nav .add_from .content_close {
+#main #side_bar #categories .group .sub_nav .add_form .content_close {
     width: 25px;
     height: 25px;
     border: 3px solid rgb(185, 185, 185);

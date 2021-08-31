@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="b" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -31,153 +33,34 @@
                 </hgroup>
                 <div id="section">
                     <div id="wrapper">
-                        <div class="group">
+                    <c:forEach var="n" items="${list }">
+                		<div class="group">
                             <div class="group_title">
-                                <a href="/border">Java</a>
+                                <a href="/border_table?border_code=${n.border_code }">${n.border_name }</a>
                                 <hr>
                             </div>
                             <ul class="sub_nav">
-                                <li>
+                            	<b:forEach var="m" items="${n.border_dtlList}">
+                            	<li>
                                    <div class="label_public">
-                                       <a href="#">Java1</a>
+                                       <a href="#">${m.border_title }</a>
                                    </div> 
                                 </li>
-                                <li>
-                                    <div class="label_public">
-                                        <a href="#">Java2</a>
-                                    </div>
-                                 </li>
+                            	</b:forEach>
                             </ul>
                         </div>
-                        <div class="group">
-                            <div class="group_title">
-                                <a href="#">CSS</a>
-                                <hr>
-                            </div>
-                            <ul class="sub_nav">
-                                <li>
-                                   <div class="label_public">
-                                       <a href="#">CSS1</a>
-                                   </div>
-                                </li>
-                                <li>
-                                    <div class="label_public">
-                                        <a href="#">CSS2</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="group">
-                            <div class="group_title">
-                                <a href="#">Java</a>
-                                <hr>
-                            </div>
-                            <ul class="sub_nav">
-                                <li>
-                                   <div class="label_public">
-                                       <a href="#">test1</a>
-                                   </div>
-                                </li>
-                                <li>
-                                    <div class="label_public">
-                                        <a href="#">test2</a>
-                                    </div>
-                                 </li>
-                            </ul>
-                        </div>
-                        <div class="group">
-                            <div class="group_title">
-                                <a href="#">Java</a>
-                                <hr>
-                            </div>
-                            <ul class="sub_nav">
-                                <li>
-                                   <div class="label_public">
-                                       <a href="#">test1</a>
-                                   </div>
-                                </li>
-                                <li>
-                                    <div class="label_public">
-                                        <a href="#">test2</a>
-                                    </div>
-                                 </li>
-                            </ul>
-                        </div>
-                        <div class="group">
-                            <div class="group_title">
-                                <a href="#">Java</a>
-                                <hr>
-                            </div>
-                            <ul class="sub_nav">
-                                <li>
-                                   <div class="label_public">
-                                       <a href="#">test1</a>
-                                   </div>
-                                </li>
-                                <li>
-                                    <div class="label_public">
-                                        <a href="#">test2</a>
-                                    </div>
-                                 </li>
-                            </ul>
-                        </div>
-                        <div class="group">
-                            <div class="group_title">
-                                <a href="#">CSS</a>
-                                <hr>
-                            </div>
-                            <ul class="sub_nav">
-                                <li>
-                                   <div class="label_public">
-                                       <a href="#">test1</a>
-                                   </div>
-                                </li>
-                                <li>
-                                    <div class="label_public">
-                                        <a href="#">test2</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="group">
-                            <div class="group_title">
-                                <a href="#">Java</a>
-                                <hr>
-                            </div>
-                            <ul class="sub_nav">
-                                <li>
-                                   <div class="label_public">
-                                       <a href="#">test1</a>
-                                   </div>
-                                </li>
-                                <li>
-                                    <div class="label_public">
-                                        <a href="#">test2</a>
-                                    </div>
-                                 </li>
-                            </ul>
-                        </div>
+                	</c:forEach>
                     </div>
                 </div>
             </div>
             
             <div id="swiper-container__id" class="swiper-container">
                 <article id="main_art" class="swiper-wrapper">
+                    <c:forEach var="n" items="${list }">
                     <nav class="swiper-slide">
-                        <div class="box"><a href="#">Java</a></div>
+                        <div class="box"><a href="/border_table?border_code=${n.border_code }">${n.border_name }</a></div>
                     </nav>
-                    <nav class="swiper-slide">
-                        <div class="box"><a href="#">Script</a></div>
-                    </nav>
-                    <nav class="swiper-slide">
-                        <div class="box"><a href="#">HTML</a></div>
-                    </nav>
-                    <nav class="swiper-slide">
-                        <div class="box"><a href="#">CSS</a></div>
-                    </nav>
-                    <nav class="swiper-slide">
-                        <div class="box"><a href="#">Js</a></div>
-                    </nav>
+                    </c:forEach>
                 </article>
                 
                 <div class="swiper-pagination"></div>

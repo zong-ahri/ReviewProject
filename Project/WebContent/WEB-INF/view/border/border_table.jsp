@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="b" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -20,190 +22,59 @@
         <div id="side_bar">
             <div id="categories">
                 <button id="title_btn">+</button>
-                <from class="add_from">
+                <form id="title_add_form">
+                	<input type="hidden" id="title_flag" value="true">
                     <input type="text" id="title_text">
                     <button id="title_add">+</button>
                     <button id="title_close">x</button>
-                </from>
+                </form>
+                <c:forEach var="n" items="${list}">
                 <div class="group">
                     <div class="group_title">
-                        <a href="#">Java</a>
+                        <a href="#">${n.border_name}</a>
+                                          
                         <button class="title_delete">-</button>
                         <hr>
                     </div>
                     <ul class="sub_nav">
+                    	<b:forEach var="m" items="${n.border_dtlList}">
                         <li>
                             <div class="label_public">
-                                <a href="#">Java1</a>
+                                <a href="#">${m.border_title }</a>
                                 <button class="content_delete">-</button>
                             </div> 
                         </li>
-                        <li>
-                             <div class="label_public">
-                                <a href="#">Java2</a>
-                                <button class="content_delete">-</button>
-                             </div> 
-                        </li>
-                        <li>
-                            <div class="label_public">
-                                <a href="#">Java3</a>
-                                <button class="content_delete">-</button>
-                            </div> 
-                        </li>
-                        <li>
-                            <div class="label_public">
-                                <a href="#">Java4</a>
-                                <button class="content_delete">-</button>
-                             </div> 
-                        </li>
-                        <li>
-                            <div class="label_public">
-                                <a href="#">Java5</a>
-                                <button class="content_delete">-</button>
-                            </div> 
-                        </li>
-                        <li>
-                            <div class="label_public">
-                                <a href="#">Java6</a>
-                                <button class="content_delete">-</button>
-                             </div> 
-                        </li>
-                        <li>
-                            <div class="label_public">
-                                <a href="#">Java7</a>
-                                <button class="content_delete">-</button>
-                            </div> 
-                        </li>
-                        <li>
-                            <div class="label_public">
-                                <a href="#">Java8</a>
-                                <button class="content_delete">-</button>
-                            </div> 
-                        </li>
+                        </b:forEach>
                         <button class="content_btn">+</button>
-                        <div class="add_from">
+                        <form class="add_form">
+                            <input type="hidden" class="content_flag" value="true">
                             <input type="text" class="content_text">
                             <button class="content_add">+</button>
                             <button class="content_close">x</button>
-                        </div>
+                        </form>
                     </ul>
                 </div>
-                <div class="group">
-                    <div class="group_title">
-                        <a href="#">CSS</a>
-                        <button class="title_delete">-</button>
-                        <hr>
-                    </div>
-                    <ul class="sub_nav">
-                        <li>
-                            <div class="label_public">
-                                <a href="#">CSS1</a>
-                                <button class="content_delete">-</button>
-                            </div> 
-                        </li>
-                        <li>
-                            <div class="label_public">
-                                <a href="#">CSS2</a>
-                                <button class="content_delete">-</button>
-                            </div> 
-                        </li>
-                        <li>
-                            <div class="label_public">
-                                <a href="#">CSS3</a>
-                                <button class="content_delete">-</button>
-                            </div> 
-                        </li>
-                        <li>
-                           <div class="label_public">
-                               <a href="#">CSS4</a>
-                               <button class="content_delete">-</button>
-                           </div> 
-                        </li>
-                        <li>
-                          <div class="label_public">
-                              <a href="#">CSS5</a>
-                              <button class="content_delete">-</button>
-                          </div> 
-                       </li>
-                       <li>
-                           <div class="label_public">
-                               <a href="#">CSS6</a>
-                               <button class="content_delete">-</button>
-                           </div> 
-                        </li>
-                        <li>
-                           <div class="label_public">
-                               <a href="#">CSS7</a>
-                               <button class="content_delete">-</button>
-                           </div> 
-                        </li>
-                        <li>
-                           <div class="label_public">
-                               <a href="#">CSS8</a>
-                               <button class="content_delete">-</button>
-                           </div> 
-                        </li>
-                        <button class="content_btn">+</button>
-                        <div class="add_from">
-                            <input type="text" class="content_text">
-                            <button class="content_add">+</button>
-                            <button class="content_close">x</button>
-                        </div>
-                    </ul>
-                </div>
+                </c:forEach>
             </div>
         </div>
         <div id="container">
             <div class="group_title">
-                <a href="#">Java</a>
+                <a>${border_mst_bean.border_name }</a>
                 <hr>
             </div>
             <ul class="sub_nav">
+            	<b:forEach var="m" items="${border_mst_bean.border_dtlList}">
                 <li>
                    <div class="label_public">
-                       <a href="#">Java1</a>
+                       <a>${m.border_title }</a>
                    </div> 
                 </li>
-                <li>
-                    <div class="label_public">
-                        <a href="#">Java2</a>
-                    </div> 
-                 </li>
-                 <li>
-                    <div class="label_public">
-                        <a href="#">Java3</a>
-                    </div> 
-                 </li>
-                 <li>
-                    <div class="label_public">
-                        <a href="#">Java4</a>
-                    </div> 
-                 </li>
-                 <li>
-                    <div class="label_public">
-                        <a href="#">Java5</a>
-                    </div> 
-                 </li>
-                 <li>
-                     <div class="label_public">
-                         <a href="#">Java6</a>
-                     </div> 
-                  </li>
-                  <li>
-                     <div class="label_public">
-                         <a href="#">Java7</a>
-                     </div> 
-                  </li>
-                  <li>
-                     <div class="label_public">
-                         <a href="#">Java8</a>
-                     </div> 
-                  </li>
+                </b:forEach>
             </ul>
         </div>
     </main>
     
     <jsp:include page="/WEB-INF/view/footer/footer.jsp"></jsp:include>
-
+	<script src="../JS/border_table.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@ import java.util.Date;
 
 import Beans.BorderDtlBean;
 import Beans.BorderMstBean;
+import Beans.UserBean;
 import db.DBConnectionMgr;
 
 public class BorderMgrPool {
@@ -82,5 +83,50 @@ private DBConnectionMgr pool = null;
 		return list;
 	}
 
+	// 게시글 추가 메서드
+	public boolean BorderInsert(BorderDtlBean borderDtlBean) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		
+		try {
+			con = pool.getConnection();
+			sql = "insert into BorderDtlBean(border_code, border_seq, border_name, border_title, border_content, writer_name, writer_ip, border_like, border_count, createdate, updatedate )"
+					+ "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, borderDtlBean.getBorder_code());
+			pstmt.executeUpdate();
+		}catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}finally {
+			pool.freeConnection(con, pstmt);
+		}
+		return true;
+		
+	}
+	
+	// 게시글 삭제 메서드
+	public boolean Borderdelete(BorderDtlBean borderDtlBean) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		boolean result = false;
+		
+		try {
+			con = pool.getConnection();
+			sql = "DELETE FROM BorderDtlBean WHERE Border_code = ? ";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, borderDtlBean.getBorder_code());
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt);;
+		}
+		return result;		
+		
+		
+	}
+	
 
 }
