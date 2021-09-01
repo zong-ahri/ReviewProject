@@ -19,14 +19,14 @@ for(let i = 0; i < content_btn.length; i++){
 	});
 }
 
-for(const closeButton of content_close){
-	closeButton.addEventListener('click', function(event){
-		if (content_flag.value == 'true') {
-			content_flag.value = flase;
+for(let i = 0; i < content_close.length; i++){
+	content_close[i].addEventListener('click', function(event){
+		if (content_flag[i].value == 'true') {
+			content_flag[i].value = flase;
 		}else {
-			content_flag.value = true;
-			closeButton.style.display = "block";
-			add_form.style.display = "none";
+			content_flag[i].value = true;
+			content_btn[i].style.display = "block";
+			add_form[i].style.display = "none";
 		}
 	});
 }
@@ -40,6 +40,11 @@ title_btn.onclick = () => {
 		title_add_form.style.display = "flex";
 	}
 }
+const lastseq = 0;
+const lastSeql = document.querySelectorAll(".lastseq");
+for(int i = 0; i < lastSeql.length; i++){
+	lastseq = lastSeql[i].value;
+}
 
 title_close.onclick = () => {
 	if (title_flag.value == 'true') {
@@ -50,4 +55,6 @@ title_close.onclick = () => {
 		title_add_form.style.display = "none";
 	}
 }
+
+
 

@@ -83,7 +83,7 @@ private DBConnectionMgr pool = null;
 		return list;
 	}
 
-	// 게시글 추가 메서드
+	// 사이드바 title 추가 메서드
 	public boolean BorderInsert(BorderDtlBean borderDtlBean) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -91,10 +91,12 @@ private DBConnectionMgr pool = null;
 		
 		try {
 			con = pool.getConnection();
-			sql = "insert into BorderDtlBean(border_code, border_seq, border_name, border_title, border_content, writer_name, writer_ip, border_like, border_count, createdate, updatedate )"
-					+ "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			sql = "insert into BorderMstBean(border_code, border_seq, border_title)"
+					+ "values(?,?,?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, borderDtlBean.getBorder_code());
+			pstmt.setInt(2, borderDtlBean.getBorder_seq());
+			pstmt.setString(3, borderDtlBean.getBorder_title());
 			pstmt.executeUpdate();
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -105,6 +107,9 @@ private DBConnectionMgr pool = null;
 		return true;
 		
 	}
+	
+	
+	
 	
 	// 게시글 삭제 메서드
 	public boolean Borderdelete(BorderDtlBean borderDtlBean) {

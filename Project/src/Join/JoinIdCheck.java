@@ -22,7 +22,7 @@ public class JoinIdCheck extends HttpServlet {
 		
 		String join_id = request.getParameter("join_id");
 		
-		request.setCharacterEncoding("UTF-8");		
+		request.setCharacterEncoding("UTF-8");
 		JoinMgrPool joinMgr = new JoinMgrPool();
 		
 		request.setAttribute("idstatus", joinMgr.idCheck(join_id));

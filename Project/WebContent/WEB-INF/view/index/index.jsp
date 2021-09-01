@@ -75,7 +75,7 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="../JS/pageSwiper.js"></script>
+    <script src="/JS/pageSwiper.js"></script>
     <script src="/JS/index.js"></script>
 </body>
 </html>
