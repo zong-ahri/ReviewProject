@@ -27,30 +27,40 @@ public class BorderInsert extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("UTF-8");
+		String title_submit_flag = request.getParameter("title_submit_flag") == null ? "false" : request.getParameter("title_submit_flag");
+		String content_submit_flag = request.getParameter("content_submit_flag") == null ? "false" : request.getParameter("content_submit_flag");
 		
-		String content_submit_flag = request.getParameter("content_submit_flag");
+		System.out.println(title_submit_flag);
 		System.out.println(content_submit_flag);
 		
-		if(content_submit_flag != "true") {
-				
+		if(title_submit_flag.equals("true")) {
+			BorderMstBean borderMstbean = new BorderMstBean();
+			BorderMgrPool borderMgr = new BorderMgrPool();
+			
+			String border_name = request.getParameter("border_name");
+			
+			borderMstbean.setBorder_name(border_name);
+			
+			borderMgr.BorderTitleInsert(borderMstbean);
+			
+			response.sendRedirect("/border_table");
+		}
+		
+		if(content_submit_flag.equals("true")) {
 			BorderDtlBean borderDtlbean = new BorderDtlBean();
 			BorderMgrPool borderMgr = new BorderMgrPool();
 			
-			
-			
 			int border_code = Integer.parseInt(request.getParameter("border_code"));
-			int border_seq = Integer.parseInt(request.getParameter("border_seq"));
 			String border_title = request.getParameter("border_title");
-			
-			border_seq++;
 				
 			borderDtlbean.setBorder_code(border_code);
-			borderDtlbean.setBorder_seq(border_seq);
 			borderDtlbean.setBorder_title(border_title);
 			
-			borderMgr.BorderInsert(borderDtlbean);
-		
+			borderMgr.BorderContentInsert(borderDtlbean);
+			
+			response.sendRedirect("/border_table");
 		}
+		
 	}
 
 }

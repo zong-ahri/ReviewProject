@@ -24,7 +24,7 @@
                 <button id="title_btn">+</button>
                 <form id="title_add_form" action="/borderinsert" method="GET">
                 	<input type="hidden" id="title_flag" value="true">
-                	<input type="hidden" name="title_submit_flag" value="false">
+                	<input type="hidden" id="title_submit_flag" name="title_submit_flag" value="false">
                     <input type="text" id="title_text" name="border_name">
                     <button type="button" id="title_add">+</button>
                     <button type="button" id="title_close">x</button>
@@ -32,7 +32,7 @@
                 <c:forEach var="n" items="${list}">
                 <div class="group">
                     <div class="group_title">
-                        <a href="#">${n.border_name}</a>
+                        <a href="/border_table?border_code=${n.border_code }">${n.border_name}</a>
                                           
                         <button class="title_delete">-</button>
                         <hr>
@@ -42,7 +42,7 @@
                     	<b:forEach var="m" items="${n.border_dtlList}" >
                         <li>
                             <div class="label_public">
-                            	<input type = "hidden" class = "lastseq" name = "border_seq" value = "${m.border_seq }">
+                            	<input type="hidden" name="border_seq" value="${m.border_seq}">
                                 <a href="#">${m.border_title }</a>
                                 <button class="content_delete">-</button>
                             </div> 
@@ -51,11 +51,10 @@
                         <button class="content_btn">+</button>
                         <form class="add_form" action="/borderinsert" method="GET">
                             <input type="hidden" class="content_flag" value="true">
-                            <input type="hidden" name="content_submit_flag" value="false">
+                            <input type="hidden" class="content_submit_flag" name="content_submit_flag" value="false">
                             <input type="hidden" name="border_code" value="${n.border_code}">
-	                        <input type="hidden" name="border_seq">
                             <input type="text" class="content_text" name="border_title">
-                            <button type="submit" class="content_add">+</button>
+                            <button type="button" class="content_add">+</button>
                             <button type="button" class="content_close">x</button>
                         </form>
                     </ul>
