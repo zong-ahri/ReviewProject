@@ -33,8 +33,8 @@
                 <div class="group">
                     <div class="group_title">
                         <a href="/border_table?border_code=${n.border_code }">${n.border_name}</a>
-                                          
-                        <button class="title_delete">-</button>
+                        
+                        <button class="title_delete" value="${n.border_code }">-</button>
                         <hr>
                     </div>
                     <ul class="sub_nav">
@@ -44,7 +44,8 @@
                             <div class="label_public">
                             	<input type="hidden" name="border_seq" value="${m.border_seq}">
                                 <a href="#">${m.border_title }</a>
-                                <button class="content_delete">-</button>
+                                <input type="hidden" class="content_code" value="${m.border_code }"/>
+                                <button class="content_delete" value="${m.border_seq }">-</button>
                             </div> 
                         </li>
                         </b:forEach>

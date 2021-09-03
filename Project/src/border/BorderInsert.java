@@ -30,8 +30,7 @@ public class BorderInsert extends HttpServlet {
 		String title_submit_flag = request.getParameter("title_submit_flag") == null ? "false" : request.getParameter("title_submit_flag");
 		String content_submit_flag = request.getParameter("content_submit_flag") == null ? "false" : request.getParameter("content_submit_flag");
 		
-		System.out.println(title_submit_flag);
-		System.out.println(content_submit_flag);
+		
 		
 		if(title_submit_flag.equals("true")) {
 			BorderMstBean borderMstbean = new BorderMstBean();

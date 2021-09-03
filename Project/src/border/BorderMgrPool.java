@@ -55,6 +55,7 @@ private DBConnectionMgr pool = null;
 		return list;
 	}
 	
+	//dtl 리스트 추가
 	public ArrayList<BorderDtlBean> getBorderDtlList(int border_code) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -136,14 +137,7 @@ private DBConnectionMgr pool = null;
 			pstmt.setInt(1, maxCode+1);
 			pstmt.setString(2, borderMstBean.getBorder_name());
 			pstmt.executeUpdate();
-			
-//			con = pool.getConnection();
-//			sql = "insert into border_mst values(?,?)";
-//			pstmt = con.prepareStatement(sql);
-//			pstmt.setInt(1, borderMstBean.getBorder_code());
-//			pstmt.setString(2, borderMstBean.getBorder_name());
-//			rs = pstmt.executeQuery();	
-			
+		
 		}catch (Exception e) {
 			e.printStackTrace();
 			return false;
@@ -161,19 +155,26 @@ private DBConnectionMgr pool = null;
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
-		boolean result = false;
+	
 		
 		try {
 			con = pool.getConnection();
 			sql = "DELETE FROM border_mst WHERE Border_code = ? ";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, bordermstBean.getBorder_code());
+			pstmt.executeUpdate();
+			pstmt.close();
+			sql = "DELETE FROM border_dtl WHERE Border_code = ? ";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, bordermstBean.getBorder_code());
+			pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();
+			
 		} finally {
-			pool.freeConnection(con, pstmt);;
+			pool.freeConnection(con, pstmt);
 		}
-		return result;		
+		return true;		
 		
 		
 	}
@@ -184,7 +185,6 @@ private DBConnectionMgr pool = null;
 			Connection con = null;
 			PreparedStatement pstmt = null;
 			String sql = null;
-			boolean result = false;
 			
 			try {
 				con = pool.getConnection();
@@ -192,12 +192,13 @@ private DBConnectionMgr pool = null;
 				pstmt = con.prepareStatement(sql);
 				pstmt.setInt(1, borderDtlBean.getBorder_code());
 				pstmt.setInt(2, borderDtlBean.getBorder_seq());
+				pstmt.executeUpdate();
 			} catch(Exception e) {
 				e.printStackTrace();
 			} finally {
 				pool.freeConnection(con, pstmt);;
 			}
-			return result;		
+			return true;		
 			
 			
 		}
