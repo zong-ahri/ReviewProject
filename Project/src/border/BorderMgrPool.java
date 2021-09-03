@@ -156,8 +156,8 @@ private DBConnectionMgr pool = null;
 	
 	
 	
-	// 게시글 삭제 메서드
-	public boolean Borderdelete(BorderDtlBean borderDtlBean) {
+	// 사이드바 Name 삭제 메서드
+	public boolean BorderNamedelete(BorderMstBean bordermstBean) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
@@ -165,9 +165,9 @@ private DBConnectionMgr pool = null;
 		
 		try {
 			con = pool.getConnection();
-			sql = "DELETE FROM BorderDtlBean WHERE Border_code = ? ";
+			sql = "DELETE FROM border_mst WHERE Border_code = ? ";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, borderDtlBean.getBorder_code());
+			pstmt.setInt(1, bordermstBean.getBorder_code());
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -178,6 +178,30 @@ private DBConnectionMgr pool = null;
 		
 	}
 	
+	// 사이드바 title 삭제 메서드
+	
+		public boolean BorderTitledelete(BorderDtlBean borderDtlBean) {
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			String sql = null;
+			boolean result = false;
+			
+			try {
+				con = pool.getConnection();
+				sql = "DELETE FROM border_dtl WHERE Border_code = ? and Border_seq = ? ";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setInt(1, borderDtlBean.getBorder_code());
+				pstmt.setInt(2, borderDtlBean.getBorder_seq());
+			} catch(Exception e) {
+				e.printStackTrace();
+			} finally {
+				pool.freeConnection(con, pstmt);;
+			}
+			return result;		
+			
+			
+		}
+
 	//게시판 메인테이블 
 	public ArrayList<MainBorderBean> getMainBorderList() {
 		Connection con = null;
