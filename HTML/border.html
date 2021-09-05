@@ -173,36 +173,151 @@
             </div>
         </div>
         <div id="container">
-            <div>
+            <div id="">
                 <h1>Java의 설치</h1>
-                <div id="border_contain">
-                    <div id="page_info">
-                        <div class="box">
-                            총 <span>?</span>건 | 현재 페이지 <span>?</span>/<span>?</span>
+                <div id="border_info">
+                    <div id="page">
+                        <div id="total_page">
+                            <span class="page_font">?</span>
+                            Total
+                        </div>
+                        <div id="now_page">
+                            <span class="page_font">:: ?</span>
+                            /
+                            <span class="page_font">?</span>
+                            Page
                         </div>
                         <form>
                             <select class="filter">
-                                <option value="filter">필터</option>
-                                <option value="number">number</option>
-                                <option value="update">update</option>
-                                <option value="like">like</option>
-                                <option value="count">count</option>
+                                <option value="filter">Filter</option>
+                                <option value="number">Number</option>
+                                <option value="update">Update</option>
+                                <option value="like">Like</option>
+                                <option value="count">Count</option>
                             </select>
                         </form>
                     </div>
-                    <div>
-                        <form>
-                            <select class="filter">
-                                <option value="all">전체</option>
-                                <option value="writer">name</option>
-                                <option value="update">update</option>
-                            </select>
-                            <div class="box">
-                                <input type="search">
-                                <button type="submit">search</button>
-                            </div>
-                        </form>
-                    </div>
+                    <form id="search">
+                        <select class="filter">
+                            <option value="all">All</option>
+                            <option value="writer">Name</option>
+                            <option value="update">Update</option>
+                        </select>
+                            <input type="search" class="box">
+                            <button type="submit" id="search_box">Search</button>
+                    </form>
+                </div>
+                <button id="writing">writing</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <td id="tb_number">number</td>
+                            <td id="tb_name">name</td>
+                            <td id="tb_update">update</td>
+                            <td id="tb_like">like</td>
+                            <td id="tb_count">count</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+                            <td><a href="#" class="tb_name">Choi Jong Won</a></td>
+                            <td>0000-00-00 00:00:00</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th>2</th>
+                            <td><a href="#" class="tb_name">Choi Jong Won</a></td>
+                            <td>0000-00-00 00:00:00</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th>3</th>
+                            <td><a href="#" class="tb_name">Choi Jong Won</a></td>
+                            <td>0000-00-00 00:00:00</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th>4</th>
+                            <td><a href="#" class="tb_name">Choi Jong Won</a></td>
+                            <td>0000-00-00 00:00:00</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th>5</th>
+                            <td><a href="#" class="tb_name">Choi Jong Won</a></td>
+                            <td>0000-00-00 00:00:00</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th>6</th>
+                            <td><a href="#" class="tb_name">Choi Jong Won</a></td>
+                            <td>0000-00-00 00:00:00</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th>7</th>
+                            <td><a href="#" class="tb_name">Choi Jong Won</a></td>
+                            <td>0000-00-00 00:00:00</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th>8</th>
+                            <td><a href="#" class="tb_name">Choi Jong Won</a></td>
+                            <td>0000-00-00 00:00:00</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th>9</th>
+                            <td><a href="#" class="tb_name">Choi Jong Won</a></td>
+                            <td>0000-00-00 00:00:00</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th>10</th>
+                            <td><a href="#" class="tb_name">Choi Jong Won</a></td>
+                            <td>0000-00-00 00:00:00</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="page_wrap">
+                    <span>
+                        <a href="#" title="StartPage">
+                            <img src="/IMAGES/DoubleArrowLeft.png">
+                        </a>
+                        <a href="#">
+                            <img src="/IMAGES/ArrowLeft.png">
+                        </a>
+                    </span>
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#">9</a>
+                    <a href="#">10</a>
+                    <span>
+                        <a href="#">
+                            <img src="/IMAGES/ArrowRight.png">
+                        </a>
+                        <a href="#" title="EndPage">
+                            <img src="/IMAGES/DoubleArrowRight.png">
+                        </a>
+                    </span>
                 </div>
             </div>
         </div>

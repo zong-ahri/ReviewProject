@@ -11,16 +11,94 @@
     text-align: center;
 }
 
-#main #container #border_contain {
+#main #container #border_info {
     display: flex;
     justify-content: space-between;
 }
 
-#main #container #border_contain #page_info {
+/* page */
+#main #container #border_info #page {
     display: flex;
+    align-items: center;
 }
 
-#main #container #border_contain .filter {
-    margin: 0px 10px;
+#main #container #border_info #page .page_font {
+    font-weight: 900;
+    margin: 0px 3px;
+}
+
+#main #container #border_info #search {
+    display: flex;
+    align-items: center;
+}
+
+#main #container #border_info .filter {
+    margin-left: 10px;
     border: 3px solid rgb(185, 185, 185);
+    height: 31px;
+    font-family: 'Yomogi';
+}
+
+/* search */
+#main #container #border_info #search .box {
+    width: 200px;
+    height: 31px;
+    padding: 0 0 0 10px;
+    outline: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+#main #container #border_info #search #search_box {
+    border: 3px solid rgb(185, 185, 185);
+    background-color: white;
+    height: 31px;
+    font-family: 'Yomogi';
+    font-weight: 900;
+}
+
+/* writing */
+#main #container #writing {
+    float: right;
+    margin-top: 10px;
+    border: 3px solid rgb(185, 185, 185);
+    background-color: white;
+    height: 40px;
+    font-size: 17px;
+    font-weight: 900;
+    font-family: 'Yomogi';
+}
+
+/* table */
+#main #container table {
+    width: 100%;
+    text-align: center;
+}
+
+#main #container thead {
+    font-weight: bold;
+    height: 30px;
+}
+
+#main #container #tb_name {
+    width: 70%;
+}
+
+#main #container #tb_update {
+    width: 10%;
+}
+
+#main #container .tb_name {
+    font-size: large;
+    font-weight: 600;
+}
+
+/* page_wrap */
+#main #container #page_wrap {
+    font-size: large;
+    text-align: center;
+}
+
+#main #container #page_wrap img{
+    height: 26px;
 }
