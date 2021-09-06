@@ -9,7 +9,7 @@ import java.util.Date;
 
 import Beans.BorderDtlBean;
 import Beans.BorderMstBean;
-import Beans.MainBorderBean;
+import Beans.ContentBean;
 import Beans.UserBean;
 import db.DBConnectionMgr;
 
@@ -203,24 +203,32 @@ private DBConnectionMgr pool = null;
 			
 		}
 
-	//게시판 메인테이블 
-	public ArrayList<MainBorderBean> getMainBorderList() {
+	//게시판 컨텐츠테이블 
+	public ArrayList<ContentBean> getContentBorderList(int border_code, int border_seq) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = null;
-		ArrayList<MainBorderBean> list = new ArrayList<MainBorderBean>();
+		ArrayList<ContentBean> list = new ArrayList<ContentBean>();
 		
 		try {
 			con = pool.getConnection();
-			sql = "select * from border_main";
+			sql = "select * from border_main where border_code = ? and border_seq = ?";
 			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, border_code);
+			pstmt.setInt(2, border_seq);
 			rs = pstmt.executeQuery();
+			int i = 1;
 			while(rs.next()) {
-				MainBorderBean bean = new MainBorderBean();
-				bean.setBorder_number(rs.getInt(1));
-				bean.setBorder_title(rs.getString(2));
-				bean.setBorder_name(rs.getString(3));
+				ContentBean bean = new ContentBean();
+				bean.setBorder_code(rs.getInt(1));
+				bean.setBorder_seq(rs.getInt(2));
+				bean.setBorder_number(rs.getInt(3));
+				bean.setBorder_index(i++);
+				bean.setBorder_name(rs.getString(4));
+				bean.setBorder_like(rs.getInt(5));
+				bean.setBorder_count(rs.getInt(6));
+				bean.setUpdatedate(rs.getString(8));
 		    	list.add(bean);
 			}
 		}catch (Exception e) {

@@ -36,7 +36,7 @@
                     <c:forEach var="n" items="${list }">
                 		<div class="group">
                             <div class="group_title">
-                                <a href="/border_table?border_code=${n.border_code }">${n.border_name }</a>
+                                <a href="/border_content?border_code=${n.border_code }">${n.border_name }</a>
                                 <hr>
                             </div>
                             <ul class="sub_nav">
@@ -58,7 +58,7 @@
                 <article id="main_art" class="swiper-wrapper">
                     <c:forEach var="n" items="${list }">
                     <nav class="swiper-slide">
-                        <div class="box"><a href="/border_table?border_code=${n.border_code }">${n.border_name }</a></div>
+                        <div class="box"><a href="/border_content?border_code=${n.border_code }">${n.border_name }</a></div>
                     </nav>
                     </c:forEach>
                 </article>

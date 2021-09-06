@@ -4,18 +4,16 @@ const title_add = document.querySelector('#title_add');
 const title_add_form = document.querySelector('#title_add_form');
 const title_close = document.querySelector('#title_close');
 const title_text = document.querySelector('#title_text');
-const title_submit_flag = document.querySelector("#title_submit_flag");
-const title_delete = document.querySelectorAll(".title_delete");
-
 const content_btn = document.querySelectorAll('.content_btn');
 const content_flag = document.querySelectorAll('.content_flag');
 const add_form = document.querySelectorAll('.add_form');
 const content_add = document.querySelectorAll('.content_add');
 const content_close = document.querySelectorAll('.content_close');
 const content_text = document.querySelectorAll('.content_text');
+const title_submit_flag = document.querySelector("#title_submit_flag");
 const content_submit_flag = document.querySelectorAll(".content_submit_flag");
-const content_delete = document.querySelectorAll(".content_delete");
-const content_code = document.querySelectorAll(".content_code");
+
+
 
 title_btn.onclick = () => {
 	if (title_flag.value == 'false') {
@@ -44,13 +42,6 @@ title_close.onclick = () => {
 		title_btn.style.display = "block";
 		title_add_form.style.display = "none";
 	}
-}
-
-for(let i = 0; i < title_delete.length; i++) {
-	title_delete[i].addEventListener('click', function(event){
-    	const title_btn_flag = confirm("카테고리를 삭제하시겠습니까 ?");
-		location.replace("/borderdelete?border_code=" + title_delete[i].value + "&title_btn_flag=" + title_btn_flag);
-	});
 }
 
 for(let i = 0; i < content_btn.length; i++){
@@ -83,12 +74,4 @@ for(let i = 0; i < content_btn.length; i++){
 			add_form[i].style.display = "none";
 		}
 	});
-	
-}
-
-for(let j = 0; j < content_delete.length; j++) {
-	content_delete[j].addEventListener('click', function(event){
-    	const content_btn_flag = confirm("목차를 삭제하시겠습니까 ?");
-		location.replace("/borderdelete?border_code=" + content_code[j].value + "&border_seq=" + content_delete[j].value + "&content_btn_flag=" + content_btn_flag);
-    });
 }

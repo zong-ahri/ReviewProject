@@ -8,15 +8,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Border-Table</title>
+    <title>Border</title>
     <link rel="shortcut icon" type="image?x-icon" href="/IMAGES/TitleLogo.png">
     <link rel="stylesheet" href="/CSS/style.css">
-    <link rel="stylesheet" href="/CSS/border_side_bar.css">
-    <link rel="stylesheet" href="/CSS/border_table.css">
+    <link rel="stylesheet" href="/CSS/border_side_bar.css?ver=2">
+    <link rel="stylesheet" href="/CSS/border.css?ver=1">
 </head>
 <body>
     
-    <jsp:include page="/WEB-INF/view/header/header.jsp"></jsp:include>
+    <jsp:include page="/WEB-INF/view//header/header.jsp"></jsp:include>
 
     <main id="main">
         <div id="side_bar">
@@ -32,7 +32,7 @@
                 <c:forEach var="n" items="${list}">
                 <div class="group">
                     <div class="group_title">
-                        <a href="/border_table?border_code=${n.border_code }">${n.border_name}</a>
+                        <a href="/border_content?border_code=${n.border_code }">${n.border_name}</a>
                         
                         <button class="title_delete" value="${n.border_code }">-</button>
                         <hr>
@@ -43,7 +43,7 @@
                         <li>
                             <div class="label_public">
                             	<input type="hidden" name="border_seq" value="${m.border_seq}">
-                                <a href="#">${m.border_title }</a>
+                                <a href="/bordertable?border_code=${m.border_code }&border_seq=${m.border_seq }">${m.border_title }</a>
                                 <input type="hidden" class="content_code" value="${m.border_code }"/>
                                 <button class="content_delete" value="${m.border_seq }">-</button>
                             </div> 
@@ -64,19 +64,95 @@
             </div>
         </div>
         <div id="container">
-            <div class="group_title">
-                <a>${border_mst_bean.border_name }</a>
-                <hr>
+            <div id="">
+                <h1>Java의 설치</h1>
+                <div id="border_info">
+                    <div id="page">
+                        <div id="total_page">
+                            <span class="page_font">?</span>
+                            Total
+                        </div>
+                        <div id="now_page">
+                            <span class="page_font">:: ?</span>
+                            /
+                            <span class="page_font">?</span>
+                            Page
+                        </div>
+                        <form>
+                            <select class="filter">
+                                <option value="filter">Filter</option>
+                                <option value="number">Number</option>
+                                <option value="update">Update</option>
+                                <option value="like">Like</option>
+                                <option value="count">Count</option>
+                            </select>
+                        </form>
+                    </div>
+                    <form id="search">
+                        <select class="filter">
+                            <option value="all">All</option>
+                            <option value="writer">Name</option>
+                            <option value="update">Update</option>
+                        </select>
+                            <input type="search" class="box">
+                            <button type="submit" id="search_box">Search</button>
+                    </form>
+                </div>
+                <button id="writing">writing</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <td id="tb_number">number</td>
+                            <td id="tb_name">name</td>
+                            <td id="tb_update">update</td>
+                            <td id="tb_like">like</td>
+                            <td id="tb_count">count</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach var="c" items="${contentlists}">
+                    	<tr>
+	                    	<th>${c.border_index}</th>
+	                    	<td href="#">${c.border_name}</td>
+	                    	<td>${c.updatedate}</td>
+	                    	<td>${c.border_like}</td>
+	                    	<td>${c.border_count}</td>
+                    	</tr>
+                    </c:forEach>
+                        
+                    </tbody>
+                </table>
+                <div id="page_wrap">
+                    <span>
+                        <a href="#" title="StartPage">
+                            <img src="/IMAGES/DoubleArrowLeft.png">
+                        </a>
+                        <a href="#">
+                            <img src="/IMAGES/ArrowLeft.png">
+                        </a>
+                    </span>
+                    <span>
+	                    <a href="#">1</a>
+	                    <a href="#">2</a>
+	                    <a href="#">3</a>
+	                    <a href="#">4</a>
+	                    <a href="#">5</a>
+	                    <a href="#">6</a>
+	                    <a href="#">7</a>
+	                    <a href="#">8</a>
+	                    <a href="#">9</a>
+	                    <a href="#">10</a>
+                    </span>
+                    <span>
+                        <a href="#">
+                            <img src="/IMAGES/ArrowRight.png">
+                        </a>
+                        <a href="#" title="EndPage">
+                            <img src="/IMAGES/DoubleArrowRight.png">
+                        </a>
+                    </span>
+                </div>
             </div>
-            <ul class="sub_nav">
-            	<b:forEach var="m" items="${border_mst_bean.border_dtlList}">
-                <li>
-                   <div class="label_public">
-                       <a>${m.border_title }</a>
-                   </div> 
-                </li>
-                </b:forEach>
-            </ul>
         </div>
     </main>
     
