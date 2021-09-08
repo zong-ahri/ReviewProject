@@ -69,13 +69,13 @@
                 <div id="border_info">
                     <div id="page">
                         <div id="total_page">
-                            <span class="page_font">?</span>
-                            Total
+                            <span class="page_font">${totalcount }</span>
+                            total
                         </div>
                         <div id="now_page">
-                            <span class="page_font">:: ?</span>
+                            <span class="page_font">:: ${page }</span>
                             /
-                            <span class="page_font">?</span>
+                            <span class="page_font">${totalpage }</span>
                             Page
                         </div>
                         <form>
@@ -110,7 +110,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="c" items="${contentlists}">
+                    <c:forEach var="c" items="${content}">
                     	<tr>
 	                    	<th>${c.border_index}</th>
 	                    	<td href="#">${c.border_name}</td>
@@ -132,16 +132,9 @@
                         </a>
                     </span>
                     <span>
-	                    <a href="#">1</a>
-	                    <a href="#">2</a>
-	                    <a href="#">3</a>
-	                    <a href="#">4</a>
-	                    <a href="#">5</a>
-	                    <a href="#">6</a>
-	                    <a href="#">7</a>
-	                    <a href="#">8</a>
-	                    <a href="#">9</a>
-	                    <a href="#">10</a>
+                    <c:forEach var="i" begin="${startpage }" end="${endpage }">
+	                    <a href="/bordertable?border_code=${bordercode }&border_seq=${borderseq}&border_page=${i }">${i }</a>
+                    </c:forEach>
                     </span>
                     <span>
                         <a href="#">

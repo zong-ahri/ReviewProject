@@ -73,11 +73,7 @@ public class join extends HttpServlet {
 		if(request.getParameter("user_email") != null){
 			user_day = request.getParameter("user_email");
 		}
-		
-		
-
-		
-		
+				
 		request.setAttribute("user_id", user_id);
 		request.setAttribute("user_pwd", user_repwd);
 		request.setAttribute("user_name", user_name);

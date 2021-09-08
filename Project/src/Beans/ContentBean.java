@@ -7,11 +7,19 @@ public class ContentBean {
 	private int border_number;
 	private int border_index;
 	private String border_name;
+	private String border_content;
 	private int border_like;
 	private int border_count;
 	private String createdate;
 	private String updatedate;
 	
+	
+	public String getBorder_content() {
+		return border_content;
+	}
+	public void setBorder_content(String border_content) {
+		this.border_content = border_content;
+	}
 	public int getBorder_index() {
 		return border_index;
 	}

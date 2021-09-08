@@ -42,7 +42,7 @@ public class BorderInsert extends HttpServlet {
 			
 			borderMgr.BorderTitleInsert(borderMstbean);
 			
-			response.sendRedirect("/border_table");
+			response.sendRedirect("/bordertable");
 		}
 		
 		if(content_submit_flag.equals("true")) {
@@ -57,7 +57,7 @@ public class BorderInsert extends HttpServlet {
 			
 			borderMgr.BorderContentInsert(borderDtlbean);
 			
-			response.sendRedirect("/border_table");
+			response.sendRedirect("/bordertable");
 		}
 		
 	}

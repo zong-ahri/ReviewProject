@@ -26,29 +26,39 @@ public class BorderTable extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		
-
-		ArrayList<BorderMstBean> borderMstBeans = borderMgrPool.getBorderMstList();	
-		
-		request.setAttribute("list", borderMstBeans);
-		
 		int border_code = request.getParameter("border_code") == null ? 1 : Integer.parseInt(request.getParameter("border_code"));
 		int border_seq = request.getParameter("border_seq") == null ? 1 : Integer.parseInt(request.getParameter("border_seq"));
-		int page = request.getParameter("page") == null ? 1 : Integer.parseInt(request.getParameter("page"));;
-		int max_page = 0;
+		int page = request.getParameter("border_page") == null ? 1 : Integer.parseInt(request.getParameter("border_page"));
 		int totalCount = 0;
 		
+		ArrayList<ContentBean> borderContentBeans = borderMgrPool.getContentBorderList(border_code, border_seq);	
+		ArrayList<ContentBean> borderContent = new ArrayList<ContentBean>();
+		totalCount = borderContentBeans.size();
+		int startindex = page*10 - 10;
+		int endindex = page*10 - 1 > totalCount ? totalCount : page*10;
+		borderContent.clear();
+		for(int i = startindex; i < endindex ; i++ ) {
+			borderContent.add(borderContentBeans.get(i));
+		}
 		
-		int startpage = (page%5) == 0 ? (page/5) * 5 - 4 : (page/5) * 5 + 1;
-		int totalpage = (page%5) == 0 ? (page/5) + 1 : (page/5);
-		int endpage = (startpage+4) <= totalpage ? startpage + 4 : totalpage;
+		ArrayList<BorderMstBean> borderMstBeans = borderMgrPool.getBorderMstList();	
+		
+		
 
+		int startpage = (page%10) == 0 ? (page/10) * 10 - 9 : (page/10) * 10 + 1;
+		int totalpage = (totalCount%10) == 0 ? (totalCount/10) : (totalCount/10) + 1;
+		int endpage = (startpage+9) <= totalpage ? startpage + 9 : totalpage;
+		
+		request.setAttribute("content", borderContent);
+		request.setAttribute("list", borderMstBeans);
+		request.setAttribute("page", page);
 		request.setAttribute("startpage", startpage);
 		request.setAttribute("endpage", endpage);
-				
-		ArrayList<ContentBean> borderContentBeans = borderMgrPool.getContentBorderList(border_code, border_seq);	
-		totalCount = borderContentBeans.size();
-		max_page = (totalCount % 10) == 0 ? totalCount % 10 : totalCount % 10 + 1 ;
+		request.setAttribute("totalpage", totalpage);
 		request.setAttribute("contentlists", borderContentBeans);
+		request.setAttribute("totalcount", totalCount);
+		request.setAttribute("bordercode", border_code);
+		request.setAttribute("borderseq", border_seq);
 		request.getRequestDispatcher("/WEB-INF/view/border/border_table.jsp").include(request, response);
 	}
 

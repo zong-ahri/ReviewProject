@@ -75,6 +75,7 @@ private DBConnectionMgr pool = null;
 				bean.setBorder_code(rs.getInt(1));
 				bean.setBorder_seq(rs.getInt(2));
 				bean.setBorder_title(rs.getString(3));
+				
 		    	list.add(bean);
 			}
 		}catch (Exception e) {
@@ -239,5 +240,68 @@ private DBConnectionMgr pool = null;
 		return list;
 	}
 	
+	//writing
+	
+//	public boolean borderWritingInsert(ContentBean contentbean) {
+//		Connection con = null;
+//		PreparedStatement pstmt = null;
+//		String sql = null;
+//		
+//		try {
+//			con = pool.getConnection();
+//			sql = "insert into border_main values(?, ?)";
+//			pstmt = con.prepareStatement(sql);
+//			pstmt.setString(1, contentbean.);
+//			pstmt.setString(2, contentbean.);
+//		
+//			pstmt.executeUpdate();
+//		}catch (Exception e) {
+//			e.printStackTrace();
+//			return false;
+//		}finally {
+//			pool.freeConnection(con, pstmt);
+//		}
+//		return true;
+//		
+//	}
+	
+//	public ArrayList<ContentBean> getBorderList(String filter) {
+//		Connection con = null;
+//		PreparedStatement pstmt = null;
+//		ResultSet rs = null;
+//		String sql = null;
+//		ArrayList<BorderDtlBean> list = new ArrayList<BorderDtlBean>();
+//		try {
+//			con = pool.getConnection();
+//			if(filter.equals("Number")) {
+//				sql = "select border_code, border_title, border_content, writer_name, border_date, border_count from border_dtl where Number like ? order by border_code desc";
+//			}
+//			else if(filter.equals("Update")) {
+//				sql = "select border_code, border_title, border_content, border_file, writer_name, border_date, border_count from border_dtl where Update like ? order by border_code desc";				
+//			}
+//			else if(filter.equals("Like")) {
+//				sql = "select border_code, border_title, border_content, border_file, writer_name, border_date, border_count from border_dtl where Like like ? order by border_code desc";
+//			}
+//			else if(filter.equals("count")) {
+//				sql = "select border_code, border_title, border_content, border_file, writer_name, border_date, border_count from border_dtl where count like ? order by border_code desc";
+//			}
+//			rs = pstmt.executeQuery();
+//		
+//			while(rs.next()) {
+//			BorderDtlBean bean = new BorderDtlBean();
+//			bean.setBorder_code(rs.getInt(1));
+//			bean.setBorder_title(rs.getString(2));
+//			bean.setBorder_content(rs.getString(3));
+//			bean.setBorder_file(rs.getString(4));
+//			bean.setWriter_name(rs.getString(5));				
+//			bean.setBorder_date(rs.getString(6));
+//			bean.setBorder_count(rs.getInt(7));
+//			list.add(bean);
+//			}
+//	
+//		
+//	
+//		
+//		}
 
 }

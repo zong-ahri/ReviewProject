@@ -33,7 +33,7 @@ public class BorderNameDelete extends HttpServlet {
 			
 			NameDelete.BorderNamedelete(borderMstBean);
 			
-			response.sendRedirect("/border_table");
+			response.sendRedirect("/bordertable");
 		}
 		
 		if(content_flag.equals("true")) {
@@ -48,7 +48,7 @@ public class BorderNameDelete extends HttpServlet {
 			
 			TitleDelete.BorderTitledelete(borderDtlBean);
 			
-			response.sendRedirect("/border_table");
+			response.sendRedirect("/bordertable");
 		}
 	}
 }
