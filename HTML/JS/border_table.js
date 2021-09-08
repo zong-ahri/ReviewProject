@@ -13,7 +13,10 @@ const content_text = document.querySelectorAll('.content_text');
 const title_submit_flag = document.querySelector("#title_submit_flag");
 const content_submit_flag = document.querySelectorAll(".content_submit_flag");
 
-
+const title_delete = document.querySelectorAll(".title_delete");
+const title_code = document.querySelectorAll(".title_code");
+const content_delete = document.querySelectorAll(".content_delete");
+const content_code = document.querySelectorAll(".content_code");
 
 title_btn.onclick = () => {
 	if (title_flag.value == 'false') {
@@ -42,6 +45,13 @@ title_close.onclick = () => {
 		title_btn.style.display = "block";
 		title_add_form.style.display = "none";
 	}
+}
+
+for(let i = 0; i < title_delete.length; i++){
+	title_delete[i].addEventListener('click', function(event){
+		confirm("정말 삭제하시겠습니까 ?")
+		location.replace("/borderdelete?border_code=" + title_delete[i].value)
+	});
 }
 
 for(let i = 0; i < content_btn.length; i++){
@@ -73,5 +83,10 @@ for(let i = 0; i < content_btn.length; i++){
 			content_btn[i].style.display = "block";
 			add_form[i].style.display = "none";
 		}
+	});
+	
+	content_delete[i].addEventListener('click', function(event){
+		confirm("정말 삭제하시겠습니까 ?")
+		location.replace("/borderdelete?border_code=" + content_code[i].value + "&border_seq=" + content_delete[i].value)
 	});
 }

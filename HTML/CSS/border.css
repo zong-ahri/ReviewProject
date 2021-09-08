@@ -97,8 +97,28 @@
 #main #container #page_wrap {
     font-size: large;
     text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#main #container #page_wrap span {
+    display: flex;
+    align-items: center;
+    margin: 0px 5px;
+}
+
+#main #container #page_wrap span a {
+    margin: 0px 5px;
+}
+
+#main #container #page_wrap a {
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0px 4px;
+    line-height: 10px;
 }
 
 #main #container #page_wrap img{
+    display: block;
     height: 26px;
 }
