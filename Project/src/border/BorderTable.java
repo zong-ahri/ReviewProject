@@ -34,6 +34,7 @@ public class BorderTable extends HttpServlet {
 		ArrayList<ContentBean> borderContentBeans = borderMgrPool.getContentBorderList(border_code, border_seq);	
 		ArrayList<ContentBean> borderContent = new ArrayList<ContentBean>();
 		totalCount = borderContentBeans.size();
+		System.out.println(totalCount);
 		int startindex = page*10 - 10;
 		int endindex = page*10 - 1 > totalCount ? totalCount : page*10;
 		borderContent.clear();
@@ -42,8 +43,8 @@ public class BorderTable extends HttpServlet {
 		}
 		
 		ArrayList<BorderMstBean> borderMstBeans = borderMgrPool.getBorderMstList();	
-		
-		
+		String border_title = borderMgrPool.getBorderTitle(border_code, border_seq);
+		request.setAttribute("border_title", border_title);
 
 		int startpage = (page%10) == 0 ? (page/10) * 10 - 9 : (page/10) * 10 + 1;
 		int totalpage = (totalCount%10) == 0 ? (totalCount/10) : (totalCount/10) + 1;
@@ -60,6 +61,7 @@ public class BorderTable extends HttpServlet {
 		request.setAttribute("bordercode", border_code);
 		request.setAttribute("borderseq", border_seq);
 		request.getRequestDispatcher("/WEB-INF/view/border/border_table.jsp").include(request, response);
+	
 	}
 
 }

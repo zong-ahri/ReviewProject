@@ -240,68 +240,107 @@ private DBConnectionMgr pool = null;
 		return list;
 	}
 	
-	//writing
+//writing
 	
-//	public boolean borderWritingInsert(ContentBean contentbean) {
-//		Connection con = null;
-//		PreparedStatement pstmt = null;
-//		String sql = null;
-//		
-//		try {
-//			con = pool.getConnection();
-//			sql = "insert into border_main values(?, ?)";
-//			pstmt = con.prepareStatement(sql);
-//			pstmt.setString(1, contentbean.);
-//			pstmt.setString(2, contentbean.);
-//		
-//			pstmt.executeUpdate();
-//		}catch (Exception e) {
-//			e.printStackTrace();
-//			return false;
-//		}finally {
-//			pool.freeConnection(con, pstmt);
-//		}
-//		return true;
-//		
-//	}
+	public boolean borderWritingInsert(ContentBean contentbean) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		
+		try {
+			con = pool.getConnection();
+			sql = "select max(border_number) from border_main where border_code = ? and border_seq = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, contentbean.getBorder_code());
+			pstmt.setInt(2, contentbean.getBorder_seq());
+			rs = pstmt.executeQuery();
+			rs.next();
+			int maxBorder_number = rs.getInt(1)+1;
+			rs.close();
+			pstmt.close();
+			sql = "insert into border_main(border_code, border_seq, border_number, border_name, border_content, createdate, updatedate) values(?, ?, ?, ?, ?,  now(), now())";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, contentbean.getBorder_code());
+			pstmt.setInt(2, contentbean.getBorder_seq());
+			pstmt.setInt(3, maxBorder_number);
+			pstmt.setString(4,  contentbean.getBorder_name());
+			pstmt.setString(5, contentbean.getBorder_content());
+			pstmt.executeUpdate();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			pool.freeConnection(con, pstmt);
+		}
+		return true;
+		
+	}
 	
-//	public ArrayList<ContentBean> getBorderList(String filter) {
-//		Connection con = null;
-//		PreparedStatement pstmt = null;
-//		ResultSet rs = null;
-//		String sql = null;
-//		ArrayList<BorderDtlBean> list = new ArrayList<BorderDtlBean>();
-//		try {
-//			con = pool.getConnection();
-//			if(filter.equals("Number")) {
-//				sql = "select border_code, border_title, border_content, writer_name, border_date, border_count from border_dtl where Number like ? order by border_code desc";
-//			}
-//			else if(filter.equals("Update")) {
-//				sql = "select border_code, border_title, border_content, border_file, writer_name, border_date, border_count from border_dtl where Update like ? order by border_code desc";				
-//			}
-//			else if(filter.equals("Like")) {
-//				sql = "select border_code, border_title, border_content, border_file, writer_name, border_date, border_count from border_dtl where Like like ? order by border_code desc";
-//			}
-//			else if(filter.equals("count")) {
-//				sql = "select border_code, border_title, border_content, border_file, writer_name, border_date, border_count from border_dtl where count like ? order by border_code desc";
-//			}
-//			rs = pstmt.executeQuery();
-//		
-//			while(rs.next()) {
-//			BorderDtlBean bean = new BorderDtlBean();
-//			bean.setBorder_code(rs.getInt(1));
-//			bean.setBorder_title(rs.getString(2));
-//			bean.setBorder_content(rs.getString(3));
-//			bean.setBorder_file(rs.getString(4));
-//			bean.setWriter_name(rs.getString(5));				
-//			bean.setBorder_date(rs.getString(6));
-//			bean.setBorder_count(rs.getInt(7));
-//			list.add(bean);
-//			}
-//	
-//		
-//	
-//		
-//		}
+	
+	public String getBorderTitle(int border_code, int border_seq) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		
+		try {
+			con = pool.getConnection();
+			sql = "select border_title from border_dtl where border_code = ? and border_seq = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, border_code);
+			pstmt.setInt(2, border_seq);
+			rs = pstmt.executeQuery();
+			rs.next();
+			return rs.getString(1);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return "";
+	
+	}
+	/*
+	public ArrayList<ContentBean> getBorderList(String filter) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		ArrayList<BorderDtlBean> list = new ArrayList<BorderDtlBean>();
+		try {
+			con = pool.getConnection();
+			if(filter.equals("Number")) {
+				sql = "select border_number, border_name, border_update, border_like, border_count from border_main where Number like ? order by border_code desc";
+			}
+			else if(filter.equals("Update")) {
+				sql = "select border_number, border_name, border_update, border_like, border_count from border_main where Update like ? order by border_code desc";				
+			}
+			else if(filter.equals("Like")) {
+				sql = "select border_number, border_name, border_update, border_like, border_count from border_main where Like like ? order by border_code desc";
+			}
+			else if(filter.equals("count")) {
+				sql = "select border_number, border_name, border_update, border_like, border_count from border_main where count like ? order by border_code desc";
+			}
+			rs = pstmt.executeQuery();
+		
+			while(rs.next()) {
+			ContentBean bean = new ContentBean();
+			bean.setBorder_number(rs.getInt(1));
+			bean.setBorder_name(rs.getString(2));
+			bean.setUpdatedate(rs.getString(3));
+			bean.setBorder_like(rs.getInt(4));
+			bean.setBorder_count(rs.getInt(5));				
+			list.add(bean);
+			}
+		}catch (Exception e) {	
+			e.printStackTrace();
+		}finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return list;
+		
+		}
+*/
+
 
 }

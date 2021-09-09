@@ -49,8 +49,8 @@ title_close.onclick = () => {
 
 for(let i = 0; i < title_delete.length; i++){
 	title_delete[i].addEventListener('click', function(event){
-		confirm("정말 삭제하시겠습니까 ?")
-		location.replace("/borderdelete?border_code=" + title_delete[i].value)
+		const flag = confirm("정말 삭제하시겠습니까 ?");
+		location.replace("/borderdelete?border_code=" + title_delete[i].value + "&title_btn_flag=" + flag);
 	});
 }
 
@@ -86,7 +86,7 @@ for(let i = 0; i < content_btn.length; i++){
 	});
 	
 	content_delete[i].addEventListener('click', function(event){
-		confirm("정말 삭제하시겠습니까 ?")
-		location.replace("/borderdelete?border_code=" + content_code[i].value + "&border_seq=" + content_delete[i].value)
+		const flag = confirm("정말 삭제하시겠습니까 ?");
+		location.replace("/borderdelete?border_code=" + content_code[i].value + "&border_seq=" + content_delete[i].value + "&content_btn_flag=" + flag);
 	});
 }

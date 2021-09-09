@@ -12,7 +12,7 @@
     <link rel="shortcut icon" type="image?x-icon" href="/IMAGES/TitleLogo.png">
     <link rel="stylesheet" href="/CSS/style.css">
     <link rel="stylesheet" href="/CSS/border_side_bar.css?ver=2">
-    <link rel="stylesheet" href="/CSS/border.css?ver=1">
+    <link rel="stylesheet" href="/CSS/border_insert.css">
 </head>
 <body>
     
@@ -71,93 +71,31 @@
             </div>
         </div>
         <div id="container">
-            <div>
+            <form id="borderinsertform" action="borderwriting">
+
                 <h1>${border_title }</h1>
-                <div id="border_info">
-                    <div id="page">
-                        <div id="total_page">
-                            <span class="page_font">${totalcount }</span>
-                            total
-                        </div>
-                        <div id="now_page">
-                            <span class="page_font">:: ${page }</span>
-                            /
-                            <span class="page_font">${totalpage }</span>
-                            Page
-                        </div>
-                        <form name = "filter">
-                            <select class="filter">
-                                <option value="filter">Filter</option>
-                                <option value="number">Number</option>
-                                <option value="update">Update</option>
-                                <option value="like">Like</option>
-                                <option value="count">Count</option>
-                            </select>
-                        </form>
-                    </div>
-                    <form id="search">
-                        <select class="filter">
-                            <option value="all">All</option>
-                            <option value="writer">Name</option>
-                            <option value="update">Update</option>
-                        </select>
-                            <input type="search" class="box">
-                            <button type="submit" id="search_box">Search</button>
-                    </form>
+                <input type="hidden" name="user_name" value="${userBean.user_name }">
+                <h2>- ${userBean.user_name } -</h2>
+                
+                <div>
+                    <textarea class="content_textarea" name="border_content"></textarea>
                 </div>
                 
-                <button id="writing" style="display:${display }" onclick="location.href='/bordercontentinsert?border_code=${bordercode }&border_seq=${borderseq}'">writing</button>
-                <table>
-                    <thead>
-                        <tr>
-                            <td id="tb_number">number</td>
-                            <td id="tb_name">name</td>
-                            <td id="tb_update">update</td>
-                            <td id="tb_like">like</td>
-                            <td id="tb_count">count</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach var="c" items="${content}">
-                    	<tr>
-	                    	<th>${c.border_index}</th>
-	                    	<td href="/bordercontentdtl">${c.border_name}</td>
-	                    	<td>${c.updatedate}</td>
-	                    	<td>${c.border_like}</td>
-	                    	<td>${c.border_count}</td>
-                    	</tr>
-                    </c:forEach>
-                        
-                    </tbody>
-                </table>
-                <div id="page_wrap">
-                    <span>
-                        <a href="#" title="StartPage">
-                            <img src="/IMAGES/DoubleArrowLeft.png">
-                        </a>
-                        <a href="#">
-                            <img src="/IMAGES/ArrowLeft.png">
-                        </a>
-                    </span>
-                    <span>
-                    <c:forEach var="i" begin="${startpage }" end="${endpage }">
-	                    <a href="/bordertable?border_code=${bordercode }&border_seq=${borderseq}&border_page=${i }">${i }</a>
-                    </c:forEach>
-                    </span>
-                    <span>
-                        <a href="#">
-                            <img src="/IMAGES/ArrowRight.png">
-                        </a>
-                        <a href="#" title="EndPage">
-                            <img src="/IMAGES/DoubleArrowRight.png">
-                        </a>
-                    </span>
+                <div class="border_button">
+                
+                    <input type="hidden" name="border_seq" value="${border_seq }">
+                    <input type="hidden" name="border_code" value="${border_code }">
+                    <input type="hidden" id="submitFlag" name="submitFlag" value="false">
+                    <button id="insertButton">Write</button> 
+                    <button type="reset">Rewrite</button>
                 </div>
-            </div>
+
+            </form>
         </div>
     </main>
     
     <jsp:include page="/WEB-INF/view/footer/footer.jsp"></jsp:include>
 	<script src="/JS/border_table.js"></script>
+	<script src="/JS/borderinsert.js"></script>
 </body>
 </html>

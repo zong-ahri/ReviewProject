@@ -18,8 +18,8 @@ import Beans.BorderMstBean;
 @WebServlet("/border_content")
 public class BorderContent extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 	private BorderMgrPool borderMgrPool = new BorderMgrPool();
+
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setCharacterEncoding("UTF-8");
@@ -30,6 +30,7 @@ public class BorderContent extends HttpServlet {
 			border_code = Integer.parseInt(request.getParameter("border_code"));
 		}
 		ArrayList<BorderMstBean> borderMstBeans = borderMgrPool.getBorderMstList();	
+		
 		
 		for(BorderMstBean borderMstBean : borderMstBeans) {
 			if(borderMstBean.getBorder_code() == border_code) {
